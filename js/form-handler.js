@@ -180,6 +180,29 @@ class FormHandler {
       (e) => this.validateField(e.target)
     );
 
+    // Auto-fill detection - browsers don't always trigger input/change events for auto-fill
+    NHS.Events.on(this.form, 'blur', 'input, textarea', (e) => {
+      // Validate on blur to catch auto-filled values
+      this.validateField(e.target);
+    });
+
+    // Additional auto-fill detection using animationstart (webkit auto-fill detection)
+    NHS.Events.on(this.form, 'animationstart', 'input', (e) => {
+      if (e.animationName === 'onAutoFillStart') {
+        setTimeout(() => this.validateField(e.target), 100);
+      }
+    });
+
+    // Focus event to check for auto-filled values
+    NHS.Events.on(this.form, 'focus', 'input, textarea', (e) => {
+      // Small delay to allow auto-fill to complete
+      setTimeout(() => {
+        if (e.target.value) {
+          this.validateField(e.target);
+        }
+      }, 100);
+    });
+
     // Option button styling
     NHS.Events.on(this.form, 'change', 'input[type="radio"]', (e) => {
       this.updateOptionButtons(e.target);
@@ -227,6 +250,25 @@ class FormHandler {
       } else if (e.key === 'ArrowLeft' && e.ctrlKey) {
         e.preventDefault();
         this.prevStep();
+      }
+    });
+
+    // Periodic check for auto-filled values (fallback method)
+    this.autoFillCheckInterval = setInterval(() => {
+      this.checkForAutoFilledValues();
+    }, 1000);
+  }
+
+  checkForAutoFilledValues() {
+    const formFields = this.form.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], textarea');
+    
+    formFields.forEach(field => {
+      // Check if field has value but no validation state
+      if (field.value && 
+          !NHS.DOM.hasClass(field, 'form-field--valid') && 
+          !NHS.DOM.hasClass(field, 'form-field--invalid')) {
+        // Field has value but hasn't been validated - likely auto-filled
+        this.validateField(field);
       }
     });
   }
@@ -850,6 +892,14 @@ class FormHandler {
     NHS.Storage.remove('nhsFormData');
     this.currentStep = 1;
     this.updateUI();
+  }
+
+  destroy() {
+    // Clean up the auto-fill check interval
+    if (this.autoFillCheckInterval) {
+      clearInterval(this.autoFillCheckInterval);
+      this.autoFillCheckInterval = null;
+    }
   }
 }
 
