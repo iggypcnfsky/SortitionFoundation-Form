@@ -39,6 +39,16 @@ class FormHandler {
         validator: (value) => value === 'yes',
         message: 'You must be eligible to participate'
       },
+      canAttendAllDates: {
+        required: true,
+        validator: (value) => value === 'yes',
+        message: 'You must confirm you can attend all dates'
+      },
+      isEligible: {
+        required: true,
+        validator: (value) => value === 'yes',
+        message: 'You must confirm you are eligible to attend'
+      },
       firstName: {
         required: true,
         validator: NHS.Validation.isValidName,
@@ -83,7 +93,7 @@ class FormHandler {
 
     // Define required fields for each step
     this.requiredFields = [
-      ['eligibility'], // Step 1
+      ['canAttendAllDates', 'isEligible'], // Step 1
       ['firstName', 'lastName', 'email', 'phone'], // Step 2
       ['dateOfBirth', 'gender', 'postcode'], // Step 3
       ['dataConsent'], // Step 4
@@ -117,6 +127,11 @@ class FormHandler {
     // Option button styling
     NHS.Events.on(this.form, 'change', 'input[type="radio"]', (e) => {
       this.updateOptionButtons(e.target);
+    });
+
+    // Eligibility card styling
+    NHS.Events.on(this.form, 'change', '.eligibility-card__input', (e) => {
+      this.updateEligibilityCards(e.target);
     });
 
     // Registration banner click
@@ -240,6 +255,24 @@ class FormHandler {
         NHS.DOM.addClass(selectedOption, 'option-button--valid');
       }
     }
+  }
+
+  updateEligibilityCards(checkboxInput) {
+    const card = checkboxInput.closest('.eligibility-card');
+    if (!card) return;
+    
+    const checkbox = card.querySelector('.eligibility-card__checkbox');
+    
+    if (checkboxInput.checked) {
+      // Update checkbox to checked state with black X
+      if (checkbox) checkbox.textContent = '✗';
+    } else {
+      // Reset checkbox to unchecked state (empty)
+      if (checkbox) checkbox.textContent = '';
+    }
+    
+    // Validate the field
+    this.validateField(checkboxInput);
   }
 
   validateCurrentStep() {

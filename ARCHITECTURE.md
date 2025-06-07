@@ -53,8 +53,26 @@ Based on the provided mockups:
 - **Scroll Indicator**: Animated indicator encouraging user to scroll down
 
 #### 3.2 Multi-Step Form System
+
+**Form Section Structure (Reusable Layout Pattern)**
+Each form section follows a consistent structure optimized for both mobile and desktop:
+
+**Mobile Layout:**
+- Content-driven height (no forced viewport height)
+- Left-aligned section header with H1 typography (30px)
+- Vertical stacking of all elements
+- 4rem top/bottom padding for proper spacing
+
+**Desktop Layout:**
+- Horizontal section header (section number + title side by side)
+- H2 typography for both elements (40px) with proper baseline alignment
+- Content aligned with banner text edges (1200px max-width, 20px padding)
+- 6rem top/bottom padding for generous spacing
+
 **Step 1: Eligibility Confirmation**
-- Checkbox for eligibility confirmation
+- Two eligibility cards with checkbox inputs
+- Horizontal text layout on desktop (title + description side by side)
+- Real-time validation with gray → green background states
 - Progress indicator (1/5)
 
 **Step 2: Contact Details**
@@ -301,16 +319,65 @@ Based on the provided mockups:
 
 ### Typography Implementation
 ```css
+/* CSS Variables for Typography System */
+:root {
+  /* Desktop Typography */
+  --font-size-h1-desktop: 70px;
+  --font-size-h2-desktop: 40px;
+  --font-size-h3-desktop: 20px;
+  
+  /* Mobile Typography */
+  --font-size-h1-mobile: 30px;
+  --font-size-h2-mobile: 15px;
+  --font-size-h3-mobile: 12px;
+  
+  /* Letter Spacing */
+  --letter-spacing-h1: -2%;
+  --letter-spacing-h2: -1%;
+  --letter-spacing-h3: -1%;
+  
+  /* Transitions */
+  --transition-fast: 0.3s ease;
+}
+
 /* Desktop Typography */
-h1 { font-size: 56px; letter-spacing: -2%; font-weight: 700; }
-h2 { font-size: 48px; letter-spacing: -1%; font-weight: 600; }
-h3 { font-size: 20px; letter-spacing: normal; font-weight: 400; }
+h1 { 
+  font-size: var(--font-size-h1-desktop); 
+  letter-spacing: var(--letter-spacing-h1); 
+  font-weight: 700; 
+}
+
+h2 { 
+  font-size: var(--font-size-h2-desktop); 
+  letter-spacing: var(--letter-spacing-h2); 
+  font-weight: 600; 
+}
+
+h3 { 
+  font-size: var(--font-size-h3-desktop); 
+  letter-spacing: var(--letter-spacing-h3); 
+  font-weight: 400; 
+}
 
 /* Mobile Typography */
 @media (max-width: 767px) {
-  h1 { font-size: 28px; letter-spacing: -2%; font-weight: 700; }
-  h2 { font-size: 24px; letter-spacing: normal; font-weight: 400; }
-  h3 { font-size: 18px; letter-spacing: normal; font-weight: 400; }
+  h1 { 
+    font-size: var(--font-size-h1-mobile); 
+    letter-spacing: var(--letter-spacing-h1); 
+    font-weight: 700; 
+  }
+  
+  h2 { 
+    font-size: var(--font-size-h2-mobile); 
+    letter-spacing: var(--letter-spacing-h2); 
+    font-weight: 400; 
+  }
+  
+  h3 { 
+    font-size: var(--font-size-h3-mobile); 
+    letter-spacing: var(--letter-spacing-h3); 
+    font-weight: 400; 
+  }
 }
 ```
 
@@ -339,6 +406,121 @@ body {
 }
 ```
 
+### Form Section Layout Implementation
+```css
+/* Reusable Form Section Structure */
+.form-section--fullscreen {
+  display: grid;
+  grid-template-columns: inherit;
+  align-items: center;
+  margin-bottom: 0;
+  border-bottom: none;
+  padding: 4rem 0; /* Mobile: content-driven height */
+}
+
+@media (min-width: 768px) {
+  .form-section--fullscreen {
+    padding: 6rem 0; /* Desktop: generous spacing */
+  }
+}
+
+/* Section Header - Mobile: Vertical, Desktop: Horizontal */
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Mobile: left-aligned */
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .section-header {
+    flex-direction: row; /* Desktop: horizontal layout */
+    align-items: baseline;
+    justify-content: flex-start;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    max-width: 1200px; /* Align with banner */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+  }
+}
+
+/* Typography - Mobile: H1, Desktop: H2 for consistency */
+.step-indicator {
+  text-align: left;
+  margin-bottom: 2rem;
+  font-size: var(--font-size-h1-mobile); /* 30px */
+  font-weight: 300;
+  color: var(--color-black-selection);
+  letter-spacing: var(--letter-spacing-h1);
+}
+
+.section-title {
+  text-align: left;
+  margin-bottom: 0;
+  color: var(--color-black-selection);
+  font-size: var(--font-size-h1-mobile); /* 30px */
+  font-weight: bold;
+  letter-spacing: var(--letter-spacing-h1);
+}
+
+@media (min-width: 768px) {
+  .step-indicator {
+    font-size: var(--font-size-h2-desktop); /* 40px */
+    margin-bottom: 0;
+    letter-spacing: var(--letter-spacing-h2);
+    flex-shrink: 0;
+  }
+  
+  .section-title {
+    font-size: var(--font-size-h2-desktop); /* 40px */
+    letter-spacing: var(--letter-spacing-h2);
+    flex: 1;
+  }
+}
+
+/* Content Container - Aligned with banner edges */
+.form-section__content {
+  grid-column: 1 / -1;
+  width: 100%;
+  max-width: none;
+}
+
+@media (min-width: 768px) {
+  .form-section__content {
+    grid-column: 2 / -2;
+  }
+}
+
+/* Eligibility Cards - Horizontal text layout on desktop */
+.eligibility-card__text-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* Mobile: vertical */
+}
+
+@media (min-width: 768px) {
+  .eligibility-card__text-content {
+    flex-direction: row; /* Desktop: horizontal */
+    align-items: baseline;
+    gap: 1rem;
+  }
+  
+  .eligibility-card__title {
+    margin-bottom: 0;
+    flex-shrink: 0;
+    width: 50%; /* Title takes left half */
+  }
+  
+  .eligibility-card__text {
+    margin-top: 0;
+    flex: 1;
+    margin-left: auto; /* Text starts at center */
+  }
+}
+```
+
 ### Form Field States
 ```css
 /* Input field states */
@@ -356,6 +538,16 @@ body {
 
 .form-field--invalid {
   background-color: var(--color-red-reject);
+}
+
+/* Eligibility Card States */
+.eligibility-card__content {
+  background-color: var(--color-gray-default); /* Default: gray */
+  transition: all var(--transition-fast);
+}
+
+.eligibility-card__input:checked ~ .eligibility-card__content {
+  background-color: var(--color-green-approval) !important; /* Checked: green */
 }
 ```
 

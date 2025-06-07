@@ -43,7 +43,7 @@
             <!-- Main Header Content -->
             <div class="header__content">
                 <h1 class="header__title" data-i18n="header.title">
-                    You have been randomly selected to help shape the future of NHS.
+                    You have been <span class="header__title--bold">randomly selected</span> to help shape the future of NHS.
                 </h1>
                 <p class="header__subtitle" data-i18n="header.subtitle">
                     This form will take less than 3 minutes. <strong>All selected participants will receive £175.</strong>
@@ -87,31 +87,55 @@
             <form class="form" id="nhsForm" novalidate>
                 
                 <!-- Section 1: Eligibility Confirmation -->
-                <section class="form-section" id="section-1">
+                <section class="form-section form-section--fullscreen" id="section-1" data-section="1">
                     <div class="form-section__content">
-                        <h2 class="form-section__title" data-i18n="form.step1.title">Eligibility Confirmation</h2>
-                        <p class="form-section__description" data-i18n="form.step1.description">
-                            Please confirm that you are eligible to participate in this NHS survey.
-                        </p>
+                        <div class="section-header">
+                            <div class="step-indicator">
+                                <span class="step-number">1</span>
+                                <span class="step-divider">/</span>
+                                <span class="step-total">5</span>
+                            </div>
+                            
+                            <h2 class="section-title" data-i18n="form.step1.title">
+                                Confirm eligibility and ability to attend
+                            </h2>
+                        </div>
                         
                         <div class="form-group">
-                            <fieldset class="form-fieldset">
-                                <legend class="form-legend" data-i18n="form.step1.question">
-                                    Are you eligible to participate?
-                                </legend>
+                            <div class="eligibility-options">
+                                <!-- Attendance Option -->
+                                <label class="eligibility-card eligibility-card--attendance">
+                                    <input type="checkbox" name="canAttendAllDates" value="yes" class="eligibility-card__input">
+                                    <div class="eligibility-card__content">
+                                        <div class="eligibility-card__header">
+                                            <span class="eligibility-card__checkbox"></span>
+                                            <div class="eligibility-card__text-content">
+                                                <span class="eligibility-card__title">I can attend all dates.</span>
+                                                <div class="eligibility-card__details">
+                                                    <span class="eligibility-card__subtitle">I can attend the conversation on </span>
+                                                    <span class="eligibility-card__date">Saturday 30 November</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </label>
                                 
-                                <div class="form-options">
-                                    <label class="option-button option-button--unselected">
-                                        <input type="radio" name="eligibility" value="yes" class="option-button__input" required>
-                                        <span class="option-button__text" data-i18n="form.step1.yes">Yes</span>
-                                    </label>
-                                    
-                                    <label class="option-button option-button--unselected">
-                                        <input type="radio" name="eligibility" value="no" class="option-button__input" required>
-                                        <span class="option-button__text" data-i18n="form.step1.no">No</span>
-                                    </label>
-                                </div>
-                            </fieldset>
+                                <!-- Eligibility Option -->
+                                <label class="eligibility-card eligibility-card--eligibility">
+                                    <input type="checkbox" name="isEligible" value="yes" class="eligibility-card__input">
+                                    <div class="eligibility-card__content">
+                                        <div class="eligibility-card__header">
+                                            <span class="eligibility-card__checkbox"></span>
+                                            <div class="eligibility-card__text-content">
+                                                <span class="eligibility-card__title">I am eligible to attend</span>
+                                                <div class="eligibility-card__text">
+                                                    I am 16 years old or over, I live in the UK, I live at an address that received an invitation and I am not an elected representative of any level of government, a paid employee of a political party, a Council employee working in a politically restricted role or a journalist (although if you are interested in attending in an observational capacity, please get in touch)
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </section>
