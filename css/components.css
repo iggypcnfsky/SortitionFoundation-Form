@@ -220,7 +220,7 @@
   border: none;
   border-radius: 0;
   font-family: var(--font-family);
-  font-size: var(--font-size-h3-mobile);
+  font-size: 16px; /* Minimum 16px to prevent mobile zoom */
   font-weight: 400;
   letter-spacing: var(--letter-spacing-h3);
   transition: all var(--transition-fast);
@@ -244,24 +244,48 @@
 /* Override browser auto-fill styling to respect our validation states */
 .form-field:-webkit-autofill,
 .form-field:-webkit-autofill:hover,
-.form-field:-webkit-autofill:focus {
+.form-field:-webkit-autofill:focus,
+.form-field:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 1000px var(--color-gray-default) inset !important;
   -webkit-text-fill-color: var(--color-black-selection) !important;
-  transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s !important;
+  background-color: var(--color-gray-default) !important;
 }
 
+/* Valid auto-filled fields */
 .form-field.form-field--valid:-webkit-autofill,
 .form-field.form-field--valid:-webkit-autofill:hover,
-.form-field.form-field--valid:-webkit-autofill:focus {
+.form-field.form-field--valid:-webkit-autofill:focus,
+.form-field.form-field--valid:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 1000px var(--color-green-approval) inset !important;
   -webkit-text-fill-color: var(--color-black-selection) !important;
+  background-color: var(--color-green-approval) !important;
 }
 
+/* Invalid auto-filled fields */
 .form-field.form-field--invalid:-webkit-autofill,
 .form-field.form-field--invalid:-webkit-autofill:hover,
-.form-field.form-field--invalid:-webkit-autofill:focus {
+.form-field.form-field--invalid:-webkit-autofill:focus,
+.form-field.form-field--invalid:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 1000px var(--color-red-reject) inset !important;
   -webkit-text-fill-color: var(--color-white-option) !important;
+  background-color: var(--color-red-reject) !important;
+}
+
+/* Additional auto-fill support for other browsers */
+.form-field:-moz-autofill {
+  background-color: var(--color-gray-default) !important;
+  color: var(--color-black-selection) !important;
+}
+
+.form-field.form-field--valid:-moz-autofill {
+  background-color: var(--color-green-approval) !important;
+  color: var(--color-black-selection) !important;
+}
+
+.form-field.form-field--invalid:-moz-autofill {
+  background-color: var(--color-red-reject) !important;
+  color: var(--color-white-option) !important;
 }
 
 @media (min-width: 768px) {
@@ -541,7 +565,7 @@ textarea.form-field {
   border: none;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
   background-color: transparent;
-  font-size: var(--font-size-h2-mobile);
+  font-size: 16px; /* Minimum 16px to prevent mobile zoom */
   font-weight: 400;
   color: var(--color-black-selection);
   text-align: center;

@@ -189,7 +189,11 @@ class FormHandler {
     // Additional auto-fill detection using animationstart (webkit auto-fill detection)
     NHS.Events.on(this.form, 'animationstart', 'input', (e) => {
       if (e.animationName === 'onAutoFillStart') {
+        // Immediate validation
+        this.validateField(e.target);
+        // Also validate after a short delay to catch any delayed auto-fill
         setTimeout(() => this.validateField(e.target), 100);
+        setTimeout(() => this.validateField(e.target), 500);
       }
     });
 
@@ -351,6 +355,13 @@ class FormHandler {
       NHS.DOM.addClass(field, 'form-field--valid');
     } else {
       NHS.DOM.addClass(field, 'form-field--invalid');
+    }
+    
+    // Force CSS reflow for auto-filled fields to ensure styling is applied
+    if (field.matches(':-webkit-autofill')) {
+      field.style.display = 'none';
+      field.offsetHeight; // Trigger reflow
+      field.style.display = '';
     }
     
     // Update error message
