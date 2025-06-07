@@ -1,0 +1,112 @@
+{
+  "form": {
+    "title": "Rejestracja uczestników NHS",
+    "step1": {
+      "title": "Potwierdź kwalifikowalność i możliwość uczestnictwa",
+      "canAttend": "Mogę uczestniczyć we wszystkich terminach.",
+      "canAttendSubtitle": "Mogę uczestniczyć w rozmowie w dniu ",
+      "eventDate": "sobota 30 listopada",
+      "eligible": "Kwalifikuję się do uczestnictwa",
+      "eligibleText": "Mam 16 lat lub więcej, mieszkam w Wielkiej Brytanii, mieszkam pod adresem, który otrzymał zaproszenie i nie jestem wybieralnym przedstawicielem żadnego szczebla rządu, płatnym pracownikiem partii politycznej, pracownikiem Rady pracującym na stanowisku ograniczonym politycznie lub dziennikarzem (chociaż jeśli jesteś zainteresowany uczestnictwem w charakterze obserwatora, skontaktuj się z nami)"
+    },
+    "step2": {
+      "title": "Imię, dane kontaktowe i adres",
+      "description": "Używamy następujących danych kontaktowych w celu komunikacji z Tobą w sprawie tego wydarzenia.",
+      "firstNamePlaceholder": "Imię",
+      "lastNamePlaceholder": "Nazwisko",
+      "emailPlaceholder": "Email",
+      "phonePlaceholder": "Telefon (komórkowy lub domowy)",
+      "addressLine1Placeholder": "Adres linia 1",
+      "addressLine2Placeholder": "Adres linia 2",
+      "cityPlaceholder": "Miasto",
+      "postCodePlaceholder": "Kod pocztowy",
+      "emailNote": "Każda osoba rejestrująca się online <strong>musi mieć swój własny indywidualny adres email.</strong> Jeśli nie masz adresu email lub dzielisz go z kimś innym, kto się rejestruje, zadzwoń pod powyższy bezpłatny numer, aby się zarejestrować."
+    },
+    "step3": {
+      "title": "O Tobie",
+      "description": "Używamy następujących szczegółów w naszym demokratycznym procesie losowania, aby wybrać grupę uczestników, która szeroko reprezentuje całą społeczność.",
+      "genderQuestion": "Jako jaką płeć się identyfikujesz?",
+      "genderMale": "Mężczyzna",
+      "genderFemale": "Kobieta",
+      "genderNonBinary": "Niebinarna<br>Inna",
+      "birthDateQuestion": "Jaka jest Twoja data urodzenia?",
+      "dayPlaceholder": "Dzień",
+      "monthPlaceholder": "Miesiąc",
+      "yearPlaceholder": "Rok",
+      "ethnicityQuestion": "Jaka jest Twoja grupa etniczna?",
+      "ethnicityAsian": "Azjatycka lub azjatycko-brytyjska",
+      "ethnicityBlack": "Czarna, afrykańska, karaibska lub czarno-brytyjska",
+      "ethnicityMixed": "Mieszane lub wieloetniczne grupy",
+      "ethnicityWhiteBritish": "Biała angielska, walijska, szkocka, północnoirlandzka lub brytyjska",
+      "ethnicityWhiteIrish": "Biała irlandzka",
+      "ethnicityWhiteOther": "Inna biała",
+      "ethnicityOther": "Inna grupa etniczna",
+      "healthQuestion": "Czy masz jakiekolwiek fizyczne lub psychiczne problemy zdrowotne lub choroby trwające lub oczekiwane do trwania 12 miesięcy lub dłużej, które ograniczają Twoją zdolność do wykonywania codziennych czynności?",
+      "healthLimitedLittle": "Tak, ograniczone w niewielkim stopniu",
+      "healthLimitedLot": "Tak, ograniczone w dużym stopniu",
+      "healthNo": "Nie",
+      "nhsSatisfactionQuestion": "Ogólnie rzecz biorąc, jak bardzo jesteś zadowolony lub niezadowolony ze sposobu, w jaki obecnie działa Narodowa Służba Zdrowia?",
+      "nhsVeryDissatisfied": "Bardzo niezadowolony",
+      "nhsQuiteDissatisfied": "Dość niezadowolony",
+      "nhsNeither": "Ani zadowolony, ani niezadowolony",
+      "nhsQuiteSatisfied": "Dość zadowolony",
+      "nhsVerySatisfied": "Bardzo zadowolony",
+      "educationQuestion": "Jakie są Twoje najwyższe kwalifikacje edukacyjne?",
+      "educationNone": "Brak kwalifikacji lub jeszcze żadnych",
+      "educationNoneDesc": "Nie masz żadnych z kwalifikacji (lub jeszcze żadnych) wymienionych poniżej.",
+      "educationLevel1": "Poziom 1",
+      "educationLevel1Desc": "Do 4 GCSE stopień A* do C, jakiekolwiek GCSE w innych stopniach, 1 poziom AS, NVQ poziom 1.",
+      "educationLevel2": "Poziom 2",
+      "educationLevel2Desc": "5 lub więcej GCSE (A* do C), poziomy O (zaliczone) lub CSE (1 poziom A, 2 do 3 poziomy AS, Walijski Dyplom Bakalaureat Średni, NVQ poziom 2, BTEC First lub General Diploma.",
+      "educationLevel3": "Poziom 3",
+      "educationLevel3Desc": "2 lub więcej poziomów A, 4 lub więcej poziomów AS, Certyfikat Szkoły Wyższej, Walijski Dyplom Bakalaureat Zaawansowany, NVQ poziom 3, BTEC National.",
+      "educationLevel4": "Poziom 4 lub wyższy",
+      "educationLevel4Desc": "Stopień (BA, BSc), wyższy stopień (MA, PhD, PGCE), NVQ poziom 4 do 5, BTEC Wyższe kwalifikacje zawodowe (na przykład, nauczanie, pielęgniarstwo, księgowość).",
+      "educationApprenticeship": "Praktyki zawodowe lub inne kwalifikacje",
+      "educationApprenticeshipDesc": "Praktyki zawodowe, kwalifikacje zawodowe lub związane z pracą, inne kwalifikacje."
+    },
+    "step4": {
+      "title": "Zgoda na przetwarzanie danych",
+      "dataConsent": "Wyrażam zgodę na wykorzystanie moich danych w sposób opisany<br>na tej stronie i bardziej szczegółowo w naszej <a href=\"#\" class=\"privacy-link\">polityce prywatności</a>.",
+      "futureEvents": "Proszę również informować mnie o podobnych wydarzeniach w przyszłości<br>(nie usuwać moich danych po tym wydarzeniu).",
+      "dataSharing1": "Udostępnimy wszystkie Twoje dane kontaktowe, postawowe i demograficzne firmie Thinks, organizacji prowadzącej to wydarzenie, a oni zawrą z Tobą oddzielną umowę dotyczącą danych, jeśli zostaniesz wybrany do udziału.",
+      "dataSharing2": "Twoje dane będą przechowywane w ścisłej poufności. Usuniemy Twoje dane w ciągu roku od zakończenia wydarzenia, chyba że powiesz nam inaczej poniżej. Przeczytaj naszą <a href=\"#\" class=\"privacy-link\">Politykę Prywatności</a>, aby uzyskać więcej szczegółów.",
+      "dataSharing3": "W każdej chwili możesz wycofać swoją zgodę i poprosić nas o usunięcie Twoich danych lub zażądać ich kopii, wysyłając email na <a href=\"mailto:privacy@sortitionfoundation.org\" class=\"contact-link\">privacy@sortitionfoundation.org</a>.",
+      "dataSharing4": "Jeśli poprosisz nas o usunięcie Twoich danych, powiemy innym organizacjom wymienionym powyżej, aby zrobiły to samo."
+    },
+    "step5": {
+      "title": "Informacje",
+      "eventInfo1": "Rozmowa odbędzie się w <strong>sobotę 30 listopada</strong> w Ipswich.",
+      "eventInfo2": "W tygodniu poprzedzającym dyskusje osobiste zostaniesz również zaproszony do udziału w 2-godzinnym warsztacie online. Będą one odbywać się wieczorem od 18:00 do 20:00.",
+      "eventInfo3": "Będziesz mógł wybrać wieczór, w którym chcesz uczestniczyć.",
+      "eventInfo4": "Wszyscy uczestnicy otrzymają £175 jako podziękowanie za Twój czas. Jeśli możemy coś zrobić, aby pomóc Ci wziąć udział, chętnie to z Tobą omówimy.",
+      "eventInfo5": "Możemy sprawdzić opcje, jeśli nie masz urządzenia wideo lub połączenia internetowego - zarejestruj się na wydarzenie bez względu na Twoją sytuację, a ktoś skontaktuje się z Tobą, jeśli zostaniesz wybrany do udziału."
+    }
+  },
+  "header": {
+    "title": "Zostałeś <span class=\"header__title--bold\">losowo wybrany</span>, aby pomóc kształtować przyszłość NHS.",
+    "subtitle": "Wypełnienie tego formularza zajmie mniej niż 3 minuty. <strong>Wszyscy wybrani uczestnicy otrzymają £175.</strong>"
+  },
+  "language": {
+    "english": "🇬🇧 English",
+    "hindi": "🇮🇳 हिंदी",
+    "chinese": "🇨🇳 中文",
+    "polish": "🇵🇱 Polski",
+    "russian": "🇷🇺 Русский",
+    "spanish": "🇪🇸 Español",
+    "german": "🇩🇪 Deutsch"
+  },
+  "video": {
+    "clickToWatch": "Kliknij, aby obejrzeć wideo"
+  },
+  "contact": {
+    "info": "Zadzwoń pod nasz bezpłatny numer <strong>0800 009 6486</strong> (8:00–20:00 codziennie), jeśli potrzebujesz pomocy przy rejestracji lub masz inne pytania. Możesz również wysłać pytania na email <a href=\"mailto:nhs@sortitionfoundation.org\" class=\"contact-link\">nhs@sortitionfoundation.org</a>."
+  },
+  "scroll": {
+    "text": "Przewiń w dół, aby się zarejestrować"
+  },
+  "banner": {
+    "register": "Kliknij, aby się zarejestrować. Wszyscy wybrani uczestnicy otrzymają £175.",
+    "fieldsCompleted": "pól wypełnionych"
+  }
+} 

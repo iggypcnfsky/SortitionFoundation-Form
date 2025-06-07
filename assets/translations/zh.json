@@ -1,0 +1,112 @@
+{
+  "form": {
+    "title": "NHS 参与者注册",
+    "step1": {
+      "title": "确认资格和出席能力",
+      "canAttend": "我可以参加所有日期。",
+      "canAttendSubtitle": "我可以参加对话于 ",
+      "eventDate": "11月30日星期六",
+      "eligible": "我有资格参加",
+      "eligibleText": "我年满16岁或以上，我住在英国，我住在收到邀请的地址，我不是任何级别政府的民选代表、政党的有薪雇员、在政治限制职位工作的议会雇员或记者（尽管如果您有兴趣以观察身份参加，请联系我们）"
+    },
+    "step2": {
+      "title": "姓名、联系方式和地址",
+      "description": "我们使用以下联系方式与您就此活动进行沟通。",
+      "firstNamePlaceholder": "名字",
+      "lastNamePlaceholder": "姓氏",
+      "emailPlaceholder": "电子邮件",
+      "phonePlaceholder": "电话（手机或家庭电话）",
+      "addressLine1Placeholder": "地址第一行",
+      "addressLine2Placeholder": "地址第二行",
+      "cityPlaceholder": "城市",
+      "postCodePlaceholder": "邮政编码",
+      "emailNote": "每个在线注册的人<strong>必须拥有自己的个人电子邮件地址。</strong>如果您没有电子邮件地址，或者您与其他注册人员共享一个电子邮件地址，请拨打上述免费电话号码进行注册。"
+    },
+    "step3": {
+      "title": "关于您",
+      "description": "我们在民主抽签过程中使用以下详细信息，以选择一组广泛代表整个社区的参与者。",
+      "genderQuestion": "您认为自己的性别是什么？",
+      "genderMale": "男性",
+      "genderFemale": "女性",
+      "genderNonBinary": "非二元性别<br>其他",
+      "birthDateQuestion": "您的出生日期是什么？",
+      "dayPlaceholder": "日",
+      "monthPlaceholder": "月",
+      "yearPlaceholder": "年",
+      "ethnicityQuestion": "您的种族群体是什么？",
+      "ethnicityAsian": "亚洲或亚裔英国人",
+      "ethnicityBlack": "黑人、非洲人、加勒比海人或黑人英国人",
+      "ethnicityMixed": "混合或多种族群体",
+      "ethnicityWhiteBritish": "白人英格兰人、威尔士人、苏格兰人、北爱尔兰人或英国人",
+      "ethnicityWhiteIrish": "白人爱尔兰人",
+      "ethnicityWhiteOther": "其他白人",
+      "ethnicityOther": "其他种族群体",
+      "healthQuestion": "您是否有任何持续或预期持续12个月或更长时间的身体或心理健康状况或疾病，这些状况限制了您进行日常活动的能力？",
+      "healthLimitedLittle": "是的，轻微限制",
+      "healthLimitedLot": "是的，严重限制",
+      "healthNo": "否",
+      "nhsSatisfactionQuestion": "总的来说，您对国家卫生服务目前的运行方式感到满意还是不满意？",
+      "nhsVeryDissatisfied": "非常不满意",
+      "nhsQuiteDissatisfied": "相当不满意",
+      "nhsNeither": "既不满意也不不满意",
+      "nhsQuiteSatisfied": "相当满意",
+      "nhsVerySatisfied": "非常满意",
+      "educationQuestion": "您的最高教育资格是什么？",
+      "educationNone": "无资格证书，或尚未获得",
+      "educationNoneDesc": "您没有下面列出的任何资格证书（或尚未获得）。",
+      "educationLevel1": "第1级",
+      "educationLevel1Desc": "最多4门GCSE A*到C级，任何其他等级的GCSE，1门AS级，NVQ第1级。",
+      "educationLevel2": "第2级",
+      "educationLevel2Desc": "5门或更多GCSE（A*到C），O级（通过）或CSE（1门A级，2到3门AS级，威尔士学士学位中级文凭，NVQ第2级，BTEC第一或普通文凭。",
+      "educationLevel3": "第3级",
+      "educationLevel3Desc": "2门或更多A级，4门或更多AS级，高中证书，威尔士学士学位高级文凭，NVQ第3级，BTEC国家级。",
+      "educationLevel4": "第4级或以上",
+      "educationLevel4Desc": "学位（BA，BSc），高级学位（MA，PhD，PGCE），NVQ第4到5级，BTEC高级专业资格（例如，教学、护理、会计）。",
+      "educationApprenticeship": "学徒制，或其他资格",
+      "educationApprenticeshipDesc": "学徒制，职业或工作相关资格，其他资格。"
+    },
+    "step4": {
+      "title": "数据同意",
+      "dataConsent": "我同意按照本页面描述的方式使用我的数据，<br>以及我们<a href=\"#\" class=\"privacy-link\">隐私政策</a>中的更多详细信息。",
+      "futureEvents": "请也告知我未来类似的活动<br>（此活动后不要删除我的详细信息）。",
+      "dataSharing1": "我们将与运营此活动的组织Thinks分享您的所有联系、态度和人口统计详细信息，如果您被选中参加，他们将与您签订单独的数据协议。",
+      "dataSharing2": "您的数据将严格保密。除非您在下面另有说明，否则我们将在活动完成后一年内删除您的详细信息。请阅读我们的<a href=\"#\" class=\"privacy-link\">隐私政策</a>了解更多详情。",
+      "dataSharing3": "您可以随时撤回同意并要求我们删除您的数据，或通过发送电子邮件至<a href=\"mailto:privacy@sortitionfoundation.org\" class=\"contact-link\">privacy@sortitionfoundation.org</a>请求副本。",
+      "dataSharing4": "如果您要求我们删除您的数据，我们将告知上述列出的其他组织也这样做。"
+    },
+    "step5": {
+      "title": "信息",
+      "eventInfo1": "对话将于<strong>11月30日星期六</strong>在伊普斯威奇举行。",
+      "eventInfo2": "在面对面讨论的前一周，您还将被邀请参加2小时的在线研讨会。这些将在晚上6点至8点举行。",
+      "eventInfo3": "您将能够选择参加的晚上。",
+      "eventInfo4": "所有参与者将获得175英镑作为对您时间的感谢。如果我们可以做任何事情来帮助您参加，我们将很乐意与您讨论。",
+      "eventInfo5": "如果您没有视频设备或互联网连接，我们可以研究选项 - 无论您的情况如何，请注册活动，如果您被选中参加，将有人与您联系。"
+    }
+  },
+  "header": {
+    "title": "您已被<span class=\"header__title--bold\">随机选中</span>帮助塑造NHS的未来。",
+    "subtitle": "此表格将花费不到3分钟。<strong>所有选定的参与者将获得175英镑。</strong>"
+  },
+  "language": {
+    "english": "🇬🇧 English",
+    "hindi": "🇮🇳 हिंदी",
+    "chinese": "🇨🇳 中文",
+    "polish": "🇵🇱 Polski",
+    "russian": "🇷🇺 Русский",
+    "spanish": "🇪🇸 Español",
+    "german": "🇩🇪 Deutsch"
+  },
+  "video": {
+    "clickToWatch": "点击观看视频"
+  },
+  "contact": {
+    "info": "如果您需要注册帮助或有其他问题，请拨打我们的免费电话号码<strong>0800 009 6486</strong>（每天上午8点至晚上8点）。您也可以发送电子邮件至<a href=\"mailto:nhs@sortitionfoundation.org\" class=\"contact-link\">nhs@sortitionfoundation.org</a>询问问题。"
+  },
+  "scroll": {
+    "text": "向下滚动注册"
+  },
+  "banner": {
+    "register": "点击注册。所有选定的参与者将获得175英镑。",
+    "fieldsCompleted": "字段已完成"
+  }
+} 

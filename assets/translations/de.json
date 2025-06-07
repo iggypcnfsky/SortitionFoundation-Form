@@ -1,0 +1,112 @@
+{
+  "form": {
+    "title": "NHS Teilnehmer-Registrierung",
+    "step1": {
+      "title": "Berechtigung und Teilnahmefähigkeit bestätigen",
+      "canAttend": "Ich kann an allen Terminen teilnehmen.",
+      "canAttendSubtitle": "Ich kann am Gespräch teilnehmen am ",
+      "eventDate": "Samstag, 30. November",
+      "eligible": "Ich bin berechtigt teilzunehmen",
+      "eligibleText": "Ich bin 16 Jahre oder älter, ich lebe im Vereinigten Königreich, ich lebe an einer Adresse, die eine Einladung erhalten hat, und ich bin kein gewählter Vertreter einer Regierungsebene, ein bezahlter Angestellter einer politischen Partei, ein Ratsangestellter in einer politisch eingeschränkten Rolle oder ein Journalist (obwohl, wenn Sie daran interessiert sind, in beobachtender Eigenschaft teilzunehmen, nehmen Sie bitte Kontakt auf)"
+    },
+    "step2": {
+      "title": "Name, Kontaktdaten und Adresse",
+      "description": "Wir verwenden die folgenden Kontaktdaten, um mit Ihnen über diese Veranstaltung zu kommunizieren.",
+      "firstNamePlaceholder": "Vorname",
+      "lastNamePlaceholder": "Nachname",
+      "emailPlaceholder": "E-Mail",
+      "phonePlaceholder": "Telefon (Handy oder Festnetz)",
+      "addressLine1Placeholder": "Adresse Zeile 1",
+      "addressLine2Placeholder": "Adresse Zeile 2",
+      "cityPlaceholder": "Stadt",
+      "postCodePlaceholder": "Postleitzahl",
+      "emailNote": "Jede Person, die sich online registriert, <strong>muss ihre eigene individuelle E-Mail-Adresse haben.</strong> Wenn Sie keine E-Mail-Adresse haben oder sie mit jemand anderem teilen, der sich registriert, rufen Sie bitte die oben genannte kostenlose Nummer an, um sich zu registrieren."
+    },
+    "step3": {
+      "title": "Über Sie",
+      "description": "Wir verwenden die folgenden Details in unserem demokratischen Lotterieverfahren, um eine Gruppe von Teilnehmern auszuwählen, die die gesamte Gemeinschaft breit repräsentiert.",
+      "genderQuestion": "Als welches Geschlecht identifizieren Sie sich?",
+      "genderMale": "Männlich",
+      "genderFemale": "Weiblich",
+      "genderNonBinary": "Nicht-binär<br>Andere",
+      "birthDateQuestion": "Was ist Ihr Geburtsdatum?",
+      "dayPlaceholder": "Tag",
+      "monthPlaceholder": "Monat",
+      "yearPlaceholder": "Jahr",
+      "ethnicityQuestion": "Was ist Ihre ethnische Gruppe?",
+      "ethnicityAsian": "Asiatisch oder asiatisch-britisch",
+      "ethnicityBlack": "Schwarz, afrikanisch, karibisch oder schwarz-britisch",
+      "ethnicityMixed": "Gemischte oder multiple ethnische Gruppen",
+      "ethnicityWhiteBritish": "Weiß englisch, walisisch, schottisch, nordirisch oder britisch",
+      "ethnicityWhiteIrish": "Weiß irisch",
+      "ethnicityWhiteOther": "Andere weiße",
+      "ethnicityOther": "Andere ethnische Gruppe",
+      "healthQuestion": "Haben Sie körperliche oder geistige Gesundheitszustände oder Krankheiten, die 12 Monate oder länger andauern oder voraussichtlich andauern werden und die Ihre Fähigkeit zur Ausführung täglicher Aktivitäten einschränken?",
+      "healthLimitedLittle": "Ja, ein wenig eingeschränkt",
+      "healthLimitedLot": "Ja, stark eingeschränkt",
+      "healthNo": "Nein",
+      "nhsSatisfactionQuestion": "Alles in allem, wie zufrieden oder unzufrieden würden Sie sagen, sind Sie mit der Art, wie der Nationale Gesundheitsdienst heutzutage läuft?",
+      "nhsVeryDissatisfied": "Sehr unzufrieden",
+      "nhsQuiteDissatisfied": "Ziemlich unzufrieden",
+      "nhsNeither": "Weder zufrieden noch unzufrieden",
+      "nhsQuiteSatisfied": "Ziemlich zufrieden",
+      "nhsVerySatisfied": "Sehr zufrieden",
+      "educationQuestion": "Was ist Ihre höchste Bildungsqualifikation?",
+      "educationNone": "Keine Qualifikationen oder noch keine",
+      "educationNoneDesc": "Sie haben keine der unten aufgeführten Qualifikationen (oder noch keine).",
+      "educationLevel1": "Stufe 1",
+      "educationLevel1Desc": "Bis zu 4 GCSE Klasse A* bis C, beliebige GCSE in anderen Klassen, 1 AS-Stufe, NVQ Stufe 1.",
+      "educationLevel2": "Stufe 2",
+      "educationLevel2Desc": "5 oder mehr GCSE (A* bis C), O-Stufen (bestanden) oder CSE (1 A-Stufe, 2 bis 3 AS-Stufen, Walisisches Baccalaureate Intermediate Diploma, NVQ Stufe 2, BTEC First oder General Diploma.",
+      "educationLevel3": "Stufe 3",
+      "educationLevel3Desc": "2 oder mehr A-Stufen, 4 oder mehr AS-Stufen, Higher School Certificate, Walisisches Baccalaureate Advanced Diploma, NVQ Stufe 3, BTEC National.",
+      "educationLevel4": "Stufe 4 oder höher",
+      "educationLevel4Desc": "Abschluss (BA, BSc), höherer Abschluss (MA, PhD, PGCE), NVQ Stufe 4 bis 5, BTEC Höhere berufliche Qualifikationen (zum Beispiel Lehre, Krankenpflege, Buchhaltung).",
+      "educationApprenticeship": "Ausbildung oder andere Qualifikationen",
+      "educationApprenticeshipDesc": "Ausbildung, berufliche oder arbeitsbezogene Qualifikationen, andere Qualifikationen."
+    },
+    "step4": {
+      "title": "Dateneinverständnis",
+      "dataConsent": "Ich stimme der Verwendung meiner Daten zu, wie auf dieser Seite beschrieben<br>und ausführlicher in unserer <a href=\"#\" class=\"privacy-link\">Datenschutzrichtlinie</a>.",
+      "futureEvents": "Bitte informieren Sie mich auch über ähnliche Veranstaltungen in der Zukunft<br>(meine Daten nach dieser Veranstaltung nicht löschen).",
+      "dataSharing1": "Wir werden alle Ihre Kontakt-, Einstellungs- und demografischen Daten mit Thinks teilen, der Organisation, die diese Veranstaltung durchführt, und sie werden eine separate Datenvereinbarung mit Ihnen treffen, wenn Sie zur Teilnahme ausgewählt werden.",
+      "dataSharing2": "Ihre Daten werden streng vertraulich behandelt. Wir werden Ihre Daten innerhalb eines Jahres nach Abschluss der Veranstaltung löschen, es sei denn, Sie teilen uns unten etwas anderes mit. Bitte lesen Sie unsere <a href=\"#\" class=\"privacy-link\">Datenschutzrichtlinie</a> für weitere Details.",
+      "dataSharing3": "Sie können jederzeit Ihre Einwilligung widerrufen und uns bitten, Ihre Daten zu löschen oder eine Kopie davon anzufordern, indem Sie eine E-Mail an <a href=\"mailto:privacy@sortitionfoundation.org\" class=\"contact-link\">privacy@sortitionfoundation.org</a> senden.",
+      "dataSharing4": "Wenn Sie uns bitten, Ihre Daten zu löschen, werden wir den anderen oben aufgeführten Organisationen sagen, dasselbe zu tun."
+    },
+    "step5": {
+      "title": "Informationen",
+      "eventInfo1": "Das Gespräch findet am <strong>Samstag, 30. November</strong> in Ipswich statt.",
+      "eventInfo2": "In der Woche vor den persönlichen Diskussionen werden Sie auch eingeladen, an einem 2-stündigen Online-Workshop teilzunehmen. Diese finden abends von 18:00 bis 20:00 Uhr statt.",
+      "eventInfo3": "Sie können den Abend wählen, an dem Sie teilnehmen möchten.",
+      "eventInfo4": "Alle Teilnehmer erhalten £175 als Dankeschön für Ihre Zeit. Wenn wir etwas tun können, um Ihnen bei der Teilnahme zu helfen, besprechen wir das gerne mit Ihnen.",
+      "eventInfo5": "Wir können Optionen prüfen, wenn Sie kein Videogerät oder keine Internetverbindung haben - bitte registrieren Sie sich für die Veranstaltung, unabhängig von Ihrer Situation, und jemand wird sich mit Ihnen in Verbindung setzen, wenn Sie zur Teilnahme ausgewählt werden."
+    }
+  },
+  "header": {
+    "title": "Sie wurden <span class=\"header__title--bold\">zufällig ausgewählt</span>, um die Zukunft des NHS mitzugestalten.",
+    "subtitle": "Dieses Formular dauert weniger als 3 Minuten. <strong>Alle ausgewählten Teilnehmer erhalten £175.</strong>"
+  },
+  "language": {
+    "english": "🇬🇧 English",
+    "hindi": "🇮🇳 हिंदी",
+    "chinese": "🇨🇳 中文",
+    "polish": "🇵🇱 Polski",
+    "russian": "🇷🇺 Русский",
+    "spanish": "🇪🇸 Español",
+    "german": "🇩🇪 Deutsch"
+  },
+  "video": {
+    "clickToWatch": "Klicken Sie, um das Video anzusehen"
+  },
+  "contact": {
+    "info": "Bitte rufen Sie unsere kostenlose Nummer <strong>0800 009 6486</strong> (8:00–20:00 Uhr täglich) an, wenn Sie Hilfe bei der Registrierung benötigen oder andere Fragen haben. Sie können auch Fragen per E-Mail an <a href=\"mailto:nhs@sortitionfoundation.org\" class=\"contact-link\">nhs@sortitionfoundation.org</a> senden."
+  },
+  "scroll": {
+    "text": "Scrollen Sie nach unten zur Registrierung"
+  },
+  "banner": {
+    "register": "Klicken Sie zur Registrierung. Alle ausgewählten Teilnehmer erhalten £175.",
+    "fieldsCompleted": "Felder ausgefüllt"
+  }
+} 

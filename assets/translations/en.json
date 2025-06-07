@@ -1,0 +1,112 @@
+{
+  "form": {
+    "title": "NHS Participant Registration",
+    "step1": {
+      "title": "Confirm eligibility and ability to attend",
+      "canAttend": "I can attend all dates.",
+      "canAttendSubtitle": "I can attend the conversation on ",
+      "eventDate": "Saturday 30 November",
+      "eligible": "I am eligible to attend",
+      "eligibleText": "I am 16 years old or over, I live in the UK, I live at an address that received an invitation and I am not an elected representative of any level of government, a paid employee of a political party, a Council employee working in a politically restricted role or a journalist (although if you are interested in attending in an observational capacity, please get in touch)"
+    },
+    "step2": {
+      "title": "Name, contact details and address",
+      "description": "We use the following contact details in order to communicate with you about this event.",
+      "firstNamePlaceholder": "First Name",
+      "lastNamePlaceholder": "Last Name",
+      "emailPlaceholder": "Email",
+      "phonePlaceholder": "Phone (mobile or home)",
+      "addressLine1Placeholder": "Address Line 1",
+      "addressLine2Placeholder": "Address Line 2",
+      "cityPlaceholder": "City",
+      "postCodePlaceholder": "Post Code",
+      "emailNote": "Every person who registers online <strong>must have their own individual email address.</strong> If you do not have an email address, or you share one with someone else who is registering, please ring the Freephone number above to register."
+    },
+    "step3": {
+      "title": "About You",
+      "description": "We use the following details in our democratic lottery process, to select a group of participants that broadly represents the entire community.",
+      "genderQuestion": "What gender do you identify as?",
+      "genderMale": "Male",
+      "genderFemale": "Female",
+      "genderNonBinary": "Non-binary<br>Other",
+      "birthDateQuestion": "What is your date of birth?",
+      "dayPlaceholder": "Day",
+      "monthPlaceholder": "Month",
+      "yearPlaceholder": "Year",
+      "ethnicityQuestion": "What is your ethnic group?",
+      "ethnicityAsian": "Asian or Asian British",
+      "ethnicityBlack": "Black, African, Caribbean or Black British",
+      "ethnicityMixed": "Mixed or Multiple ethnic groups",
+      "ethnicityWhiteBritish": "White English, Welsh, Scottish, Northern Irish or British",
+      "ethnicityWhiteIrish": "White Irish",
+      "ethnicityWhiteOther": "White Other",
+      "ethnicityOther": "Other ethnic group",
+      "healthQuestion": "Do you have any physical or mental health conditions or illnesses lasting or expected to last 12 months or more which limit your ability to carry out day-to-day activities?",
+      "healthLimitedLittle": "Yes, limited a little",
+      "healthLimitedLot": "Yes, limited a lot",
+      "healthNo": "No",
+      "nhsSatisfactionQuestion": "All in all, how satisfied or dissatisfied would you say you are with the way in which the National Health Service runs nowadays?",
+      "nhsVeryDissatisfied": "Very dissatisfied",
+      "nhsQuiteDissatisfied": "Quite dissatisfied",
+      "nhsNeither": "Neither satisfied nor dissatisfied",
+      "nhsQuiteSatisfied": "Quite satisfied",
+      "nhsVerySatisfied": "Very satisfied",
+      "educationQuestion": "What is your highest educational qualification?",
+      "educationNone": "No qualifications, or none yet",
+      "educationNoneDesc": "You have none of the qualifications (or none yet) listed below.",
+      "educationLevel1": "Level 1",
+      "educationLevel1Desc": "Up to 4 GCSEs grade A* to C, any GCSEs at other grades, 1 AS level, NVQ level 1.",
+      "educationLevel2": "Level 2",
+      "educationLevel2Desc": "5 or more GCSEs (A* to C), O levels (passes) or CSEs (1 A level, 2 to 3 AS levels, Welsh Baccalaureate Intermediate Diploma, NVQ level 2, BTEC First or General Diploma.",
+      "educationLevel3": "Level 3",
+      "educationLevel3Desc": "2 or more A levels, 4 or more AS levels, Higher School Certificate, Welsh Baccalaureate Advanced Diploma, NVQ level 3, BTEC National.",
+      "educationLevel4": "Level 4 or above",
+      "educationLevel4Desc": "Degree (BA, BSc), higher degree (MA, PhD, PGCE), NVQ level 4 to 5, BTEC Higher level professional qualifications (for example, teaching, nursing, accountancy).",
+      "educationApprenticeship": "Apprenticeship, or other qualifications",
+      "educationApprenticeshipDesc": "Apprenticeship, vocational or work-related qualifications, other qualifications."
+    },
+    "step4": {
+      "title": "Data Consent",
+      "dataConsent": "I consent to the use of my data as described<br>on this page, and in more detail in our <a href=\"#\" class=\"privacy-link\">privacy policy</a>.",
+      "futureEvents": "Please also inform me of similar events in the future<br>(do not delete my details after this event).",
+      "dataSharing1": "We will share all your contact, attitudinal and demographic details with Thinks, the organisation running this event, and they will make a separate data agreement with you if you are selected to take part.",
+      "dataSharing2": "Your data will be kept strictly confidential. We will delete your details within one year of the completion of the event, unless you tell us otherwise below. Please read our <a href=\"#\" class=\"privacy-link\">Privacy Policy</a> for more details.",
+      "dataSharing3": "At any time, you can withdraw your consent and ask us to delete your data, or request a copy of it, by emailing <a href=\"mailto:privacy@sortitionfoundation.org\" class=\"contact-link\">privacy@sortitionfoundation.org</a>.",
+      "dataSharing4": "If you ask us to delete your data, we will tell the other organisation(s) listed above to do the same."
+    },
+    "step5": {
+      "title": "Information",
+      "eventInfo1": "The conversation will be held on <strong>Saturday 30 November</strong> in Ipswich.",
+      "eventInfo2": "In the week prior to the in-person discussions you will also be invited to take part in a 2-hour online workshop. These will be held in the evening from 6pm – 8pm.",
+      "eventInfo3": "You will be able to choose the evening you attend.",
+      "eventInfo4": "All participants will receive £175 as a thank you for your time. If there is anything we can do to help you to take part, we will be happy to discuss this with you.",
+      "eventInfo5": "We can look into options if you do not have a video device or an internet connection - please register for the event whatever your situation, and someone will be in touch if you are selected to take part."
+    }
+  },
+  "header": {
+    "title": "You have been <span class=\"header__title--bold\">randomly selected</span> to help shape the future of NHS.",
+    "subtitle": "This form will take less than 3 minutes. <strong>All selected participants will receive £175.</strong>"
+  },
+  "language": {
+    "english": "🇬🇧 English",
+    "hindi": "🇮🇳 हिंदी",
+    "chinese": "🇨🇳 中文",
+    "polish": "🇵🇱 Polski",
+    "russian": "🇷🇺 Русский",
+    "spanish": "🇪🇸 Español",
+    "german": "🇩🇪 Deutsch"
+  },
+  "video": {
+    "clickToWatch": "Click to watch video"
+  },
+  "contact": {
+    "info": "Please call our Freephone number <strong>0800 009 6486</strong> (8am–8pm every day) if you need help registering or have other questions. You can also email questions to <a href=\"mailto:nhs@sortitionfoundation.org\" class=\"contact-link\">nhs@sortitionfoundation.org</a>."
+  },
+  "scroll": {
+    "text": "Scroll down to register"
+  },
+  "banner": {
+    "register": "Click to Register. All selected participants will receive £175.",
+    "fieldsCompleted": "fields completed"
+  }
+} 

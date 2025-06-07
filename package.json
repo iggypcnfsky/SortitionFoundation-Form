@@ -1,0 +1,51 @@
+{
+  "name": "nhs-participant-registration",
+  "version": "1.0.0",
+  "description": "NHS Participant Registration Form - A multilingual form for NHS participant selection and registration",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "serve": "python3 -m http.server 8000",
+    "build": "echo 'Static site - no build required'",
+    "test": "echo 'No tests specified'",
+    "deploy": "netlify deploy --prod"
+  },
+  "keywords": [
+    "nhs",
+    "registration",
+    "form",
+    "multilingual",
+    "healthcare",
+    "participant",
+    "sortition",
+    "foundation"
+  ],
+  "author": "Sortition Foundation",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sortition-foundation/nhs-registration"
+  },
+  "homepage": "https://nhs-registration.netlify.app",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "files": [
+    "index.html",
+    "css/",
+    "js/",
+    "assets/",
+    "netlify.toml",
+    "_redirects",
+    "_headers"
+  ]
+} 

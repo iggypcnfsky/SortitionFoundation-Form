@@ -5,7 +5,7 @@ class NHSApp {
     this.i18n = null;
     this.formHandler = null;
     this.currentLanguage = 'en';
-    this.supportedLanguages = ['en', 'es', 'fr', 'ar', 'zh', 'ur', 'pl'];
+    this.supportedLanguages = ['en', 'hi', 'zh', 'pl', 'ru', 'es', 'de'];
     
     this.init();
   }
@@ -387,62 +387,40 @@ class I18nSystem {
   }
 
   async loadTranslationFile(languageCode) {
-    // Simplified translation loading
-    // In production, this would fetch from assets/translations/${languageCode}.json
-    const translations = {
-      en: {
-        'header.title': 'You have been randomly selected to help shape the future of NHS',
-        'header.subtitle': 'This form will take less than 3 minutes. All selected participants will receive £175.',
-        'form.step1.title': 'Confirm eligibility and ability to attend',
-        'form.step1.description': 'Please confirm that you are eligible to participate in this NHS survey.',
-        'form.step1.question': 'Are you eligible to participate?',
-        'form.step1.yes': 'Yes',
-        'form.step1.no': 'No',
-        'form.step2.title': 'Name, contact details and address',
-        'form.step2.description': 'We use the following contact details in order to communicate with you about this event.',
-        'form.step3.title': 'About You',
-        'form.step3.description': 'We use the following details in our democratic lottery process, to select a group of participants that broadly represents the entire community.',
-        'form.step4.title': 'Data Consent',
-        'form.step2.emailNote': 'Every person who registers online <strong>must have their own individual email address.</strong> If you do not have an email address, or you share one with someone else who is registering, please ring the Freephone number above to register.',
-        'form.step2.firstNamePlaceholder': 'First Name',
-        'form.step2.lastNamePlaceholder': 'Last Name',
-        'form.step2.emailPlaceholder': 'Email',
-        'form.step2.phonePlaceholder': 'Phone (mobile or home)',
-        'form.step2.addressLine1Placeholder': 'Address Line 1',
-        'form.step2.addressLine2Placeholder': 'Address Line 2',
-        'form.step2.cityPlaceholder': 'City',
-        'form.step2.postCodePlaceholder': 'Post Code',
-        'navigation.previous': 'Previous',
-        'navigation.next': 'Next',
-        'navigation.submit': 'Submit',
-        'banner.register': 'Click to Register. All selected participants will receive £175.',
-        'banner.fieldsCompleted': 'fields completed'
-      },
-      es: {
-        'header.title': 'Ha sido seleccionado aleatoriamente para ayudar a dar forma al futuro del NHS',
-        'header.subtitle': 'Su participación nos ayudará a mejorar los servicios de salud para todos',
-        'form.step1.title': 'Confirmación de Elegibilidad',
-        'form.step1.description': 'Por favor confirme que es elegible para participar en esta encuesta del NHS.',
-        'form.step1.question': '¿Es elegible para participar?',
-        'form.step1.yes': 'Sí',
-        'form.step1.no': 'No',
-        'form.step2.title': 'Datos de Contacto',
-        'form.step2.description': 'Por favor proporcione su información de contacto.',
-        'form.step3.title': 'Acerca de Usted',
-        'form.step3.description': 'Utilizamos los siguientes detalles en nuestro proceso de lotería democrática, para seleccionar un grupo de participantes que represente ampliamente a toda la comunidad.',
-        'form.step4.title': 'Consentimiento de Datos',
-        'form.step2.firstName': 'Nombre',
-        'form.step2.lastName': 'Apellido',
-        'form.step2.email': 'Correo Electrónico',
-        'form.step2.phone': 'Teléfono',
-        'navigation.previous': 'Anterior',
-        'navigation.next': 'Siguiente',
-        'navigation.submit': 'Enviar',
-        'banner.fieldsCompleted': 'campos completados'
+    try {
+      // Load translations from JSON files
+      const response = await fetch(`assets/translations/${languageCode}.json`);
+      if (!response.ok) {
+        throw new Error(`Failed to load ${languageCode}.json`);
       }
-    };
+      const translations = await response.json();
+      return this.flattenTranslations(translations);
+    } catch (error) {
+      console.warn(`Failed to load translation file for ${languageCode}:`, error);
+      // Fallback to English if available
+      if (languageCode !== 'en') {
+        return await this.loadTranslationFile('en');
+      }
+      throw error;
+    }
+  }
+
+  flattenTranslations(obj, prefix = '') {
+    const flattened = {};
     
-    return translations[languageCode] || translations.en;
+    for (const key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        const newKey = prefix ? `${prefix}.${key}` : key;
+        
+        if (typeof obj[key] === 'object' && obj[key] !== null && !Array.isArray(obj[key])) {
+          Object.assign(flattened, this.flattenTranslations(obj[key], newKey));
+        } else {
+          flattened[newKey] = obj[key];
+        }
+      }
+    }
+    
+    return flattened;
   }
 
   t(key, params = {}) {

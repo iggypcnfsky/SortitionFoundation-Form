@@ -1,0 +1,112 @@
+{
+  "form": {
+    "title": "Registro de Participantes NHS",
+    "step1": {
+      "title": "Confirmar elegibilidad y capacidad de asistir",
+      "canAttend": "Puedo asistir a todas las fechas.",
+      "canAttendSubtitle": "Puedo asistir a la conversación el ",
+      "eventDate": "sábado 30 de noviembre",
+      "eligible": "Soy elegible para asistir",
+      "eligibleText": "Tengo 16 años o más, vivo en el Reino Unido, vivo en una dirección que recibió una invitación y no soy un representante electo de ningún nivel de gobierno, un empleado remunerado de un partido político, un empleado del Consejo que trabaja en un rol políticamente restringido o un periodista (aunque si estás interesado en asistir en calidad de observador, por favor ponte en contacto)"
+    },
+    "step2": {
+      "title": "Nombre, datos de contacto y dirección",
+      "description": "Utilizamos los siguientes datos de contacto para comunicarnos contigo sobre este evento.",
+      "firstNamePlaceholder": "Nombre",
+      "lastNamePlaceholder": "Apellido",
+      "emailPlaceholder": "Correo electrónico",
+      "phonePlaceholder": "Teléfono (móvil o fijo)",
+      "addressLine1Placeholder": "Dirección línea 1",
+      "addressLine2Placeholder": "Dirección línea 2",
+      "cityPlaceholder": "Ciudad",
+      "postCodePlaceholder": "Código postal",
+      "emailNote": "Cada persona que se registre en línea <strong>debe tener su propia dirección de correo electrónico individual.</strong> Si no tienes una dirección de correo electrónico, o la compartes con alguien más que se está registrando, por favor llama al número gratuito de arriba para registrarte."
+    },
+    "step3": {
+      "title": "Acerca de ti",
+      "description": "Utilizamos los siguientes detalles en nuestro proceso de lotería democrática, para seleccionar un grupo de participantes que represente ampliamente a toda la comunidad.",
+      "genderQuestion": "¿Con qué género te identificas?",
+      "genderMale": "Masculino",
+      "genderFemale": "Femenino",
+      "genderNonBinary": "No binario<br>Otro",
+      "birthDateQuestion": "¿Cuál es tu fecha de nacimiento?",
+      "dayPlaceholder": "Día",
+      "monthPlaceholder": "Mes",
+      "yearPlaceholder": "Año",
+      "ethnicityQuestion": "¿Cuál es tu grupo étnico?",
+      "ethnicityAsian": "Asiático o asiático británico",
+      "ethnicityBlack": "Negro, africano, caribeño o negro británico",
+      "ethnicityMixed": "Grupos étnicos mixtos o múltiples",
+      "ethnicityWhiteBritish": "Blanco inglés, galés, escocés, norirlandés o británico",
+      "ethnicityWhiteIrish": "Blanco irlandés",
+      "ethnicityWhiteOther": "Otro blanco",
+      "ethnicityOther": "Otro grupo étnico",
+      "healthQuestion": "¿Tienes alguna condición de salud física o mental o enfermedades que duren o se espere que duren 12 meses o más que limiten tu capacidad para realizar actividades cotidianas?",
+      "healthLimitedLittle": "Sí, limitado un poco",
+      "healthLimitedLot": "Sí, limitado mucho",
+      "healthNo": "No",
+      "nhsSatisfactionQuestion": "En general, ¿qué tan satisfecho o insatisfecho dirías que estás con la forma en que funciona actualmente el Servicio Nacional de Salud?",
+      "nhsVeryDissatisfied": "Muy insatisfecho",
+      "nhsQuiteDissatisfied": "Bastante insatisfecho",
+      "nhsNeither": "Ni satisfecho ni insatisfecho",
+      "nhsQuiteSatisfied": "Bastante satisfecho",
+      "nhsVerySatisfied": "Muy satisfecho",
+      "educationQuestion": "¿Cuál es tu calificación educativa más alta?",
+      "educationNone": "Sin calificaciones, o ninguna aún",
+      "educationNoneDesc": "No tienes ninguna de las calificaciones (o ninguna aún) listadas abajo.",
+      "educationLevel1": "Nivel 1",
+      "educationLevel1Desc": "Hasta 4 GCSE grado A* a C, cualquier GCSE en otros grados, 1 nivel AS, NVQ nivel 1.",
+      "educationLevel2": "Nivel 2",
+      "educationLevel2Desc": "5 o más GCSE (A* a C), niveles O (aprobados) o CSE (1 nivel A, 2 a 3 niveles AS, Diploma Intermedio de Bachillerato Galés, NVQ nivel 2, BTEC First o General Diploma.",
+      "educationLevel3": "Nivel 3",
+      "educationLevel3Desc": "2 o más niveles A, 4 o más niveles AS, Certificado de Escuela Superior, Diploma Avanzado de Bachillerato Galés, NVQ nivel 3, BTEC National.",
+      "educationLevel4": "Nivel 4 o superior",
+      "educationLevel4Desc": "Grado (BA, BSc), grado superior (MA, PhD, PGCE), NVQ nivel 4 a 5, BTEC Calificaciones profesionales de nivel superior (por ejemplo, enseñanza, enfermería, contabilidad).",
+      "educationApprenticeship": "Aprendizaje, u otras calificaciones",
+      "educationApprenticeshipDesc": "Aprendizaje, calificaciones vocacionales o relacionadas con el trabajo, otras calificaciones."
+    },
+    "step4": {
+      "title": "Consentimiento de datos",
+      "dataConsent": "Consiento el uso de mis datos como se describe<br>en esta página, y con más detalle en nuestra <a href=\"#\" class=\"privacy-link\">política de privacidad</a>.",
+      "futureEvents": "Por favor, también infórmame sobre eventos similares en el futuro<br>(no eliminar mis datos después de este evento).",
+      "dataSharing1": "Compartiremos todos tus datos de contacto, actitudinales y demográficos con Thinks, la organización que ejecuta este evento, y harán un acuerdo de datos separado contigo si eres seleccionado para participar.",
+      "dataSharing2": "Tus datos se mantendrán estrictamente confidenciales. Eliminaremos tus datos dentro de un año de la finalización del evento, a menos que nos digas lo contrario abajo. Por favor lee nuestra <a href=\"#\" class=\"privacy-link\">Política de Privacidad</a> para más detalles.",
+      "dataSharing3": "En cualquier momento, puedes retirar tu consentimiento y pedirnos que eliminemos tus datos, o solicitar una copia de los mismos, enviando un correo electrónico a <a href=\"mailto:privacy@sortitionfoundation.org\" class=\"contact-link\">privacy@sortitionfoundation.org</a>.",
+      "dataSharing4": "Si nos pides que eliminemos tus datos, diremos a las otras organizaciones listadas arriba que hagan lo mismo."
+    },
+    "step5": {
+      "title": "Información",
+      "eventInfo1": "La conversación se llevará a cabo el <strong>sábado 30 de noviembre</strong> en Ipswich.",
+      "eventInfo2": "En la semana previa a las discusiones en persona también serás invitado a participar en un taller en línea de 2 horas. Estos se llevarán a cabo en la noche de 6pm a 8pm.",
+      "eventInfo3": "Podrás elegir la noche a la que asistas.",
+      "eventInfo4": "Todos los participantes recibirán £175 como agradecimiento por tu tiempo. Si hay algo que podamos hacer para ayudarte a participar, estaremos encantados de discutirlo contigo.",
+      "eventInfo5": "Podemos investigar opciones si no tienes un dispositivo de video o conexión a internet - por favor regístrate para el evento sin importar tu situación, y alguien se pondrá en contacto contigo si eres seleccionado para participar."
+    }
+  },
+  "header": {
+    "title": "Has sido <span class=\"header__title--bold\">seleccionado aleatoriamente</span> para ayudar a dar forma al futuro del NHS.",
+    "subtitle": "Este formulario tomará menos de 3 minutos. <strong>Todos los participantes seleccionados recibirán £175.</strong>"
+  },
+  "language": {
+    "english": "🇬🇧 English",
+    "hindi": "🇮🇳 हिंदी",
+    "chinese": "🇨🇳 中文",
+    "polish": "🇵🇱 Polski",
+    "russian": "🇷🇺 Русский",
+    "spanish": "🇪🇸 Español",
+    "german": "🇩🇪 Deutsch"
+  },
+  "video": {
+    "clickToWatch": "Haz clic para ver el video"
+  },
+  "contact": {
+    "info": "Por favor llama a nuestro número gratuito <strong>0800 009 6486</strong> (8am–8pm todos los días) si necesitas ayuda registrándote o tienes otras preguntas. También puedes enviar preguntas por correo electrónico a <a href=\"mailto:nhs@sortitionfoundation.org\" class=\"contact-link\">nhs@sortitionfoundation.org</a>."
+  },
+  "scroll": {
+    "text": "Desplázate hacia abajo para registrarte"
+  },
+  "banner": {
+    "register": "Haz clic para registrarte. Todos los participantes seleccionados recibirán £175.",
+    "fieldsCompleted": "campos completados"
+  }
+} 

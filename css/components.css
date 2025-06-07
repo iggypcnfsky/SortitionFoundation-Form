@@ -1157,4 +1157,107 @@ textarea.form-field {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Section 5: Informations Layout */
+.info-content-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .info-content-row {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 3rem;
+    align-items: start;
+  }
+  
+  .info-content-row__text {
+    order: 1;
+    grid-column: 1;
+  }
+  
+  .info-content-row__video {
+    order: 2;
+    grid-column: 2;
+  }
+  
+  /* Override video-section grid behavior for Section 5 */
+  .info-content-row__video.video-section {
+    grid-column: 2 !important;
+    margin-bottom: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Make video thumbnail flexible within Section 5 */
+  .info-content-row__video .video-thumbnail {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    min-height: 200px;
+  }
+  
+  .info-content-row__video .video-thumbnail__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Event Information */
+.event-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.event-info__text {
+  color: var(--color-black-selection);
+  font-size: var(--font-size-h3-mobile);
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .event-info__text {
+    font-size: var(--font-size-h3-desktop);
+  }
+}
+
+/* Partner Logos */
+.partner-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.partner-logos__image {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+
+/* Small logos modifier */
+.partner-logos--small .partner-logos__image {
+  max-width: 60%; /* Bigger logos */
+  width: auto;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .partner-logos {
+    margin-top: 4rem;
+  }
+  
+  .partner-logos--small .partner-logos__image {
+    max-width: 50%; /* Bigger on desktop */
+  }
 } 

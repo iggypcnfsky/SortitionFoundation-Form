@@ -14,10 +14,13 @@
 <body>
     <!-- Language Selector -->
     <div class="language-selector">
-        <button class="language-btn language-btn--active" data-lang="en">English</button>
-        <button class="language-btn" data-lang="hi">भारतीय</button>
-        <button class="language-btn" data-lang="zh">中文</button>
-        <button class="language-btn" data-lang="other">Other</button>
+        <button class="language-btn language-btn--active" data-lang="en" data-i18n="language.english">🇬🇧 English</button>
+        <button class="language-btn" data-lang="hi" data-i18n="language.hindi">🇮🇳 हिंदी</button>
+        <button class="language-btn" data-lang="zh" data-i18n="language.chinese">🇨🇳 中文</button>
+        <button class="language-btn" data-lang="pl" data-i18n="language.polish">🇵🇱 Polski</button>
+        <button class="language-btn" data-lang="ru" data-i18n="language.russian">🇷🇺 Русский</button>
+        <button class="language-btn" data-lang="es" data-i18n="language.spanish">🇪🇸 Español</button>
+        <button class="language-btn" data-lang="de" data-i18n="language.german">🇩🇪 Deutsch</button>
     </div>
 
     <!-- Header Section -->
@@ -58,21 +61,21 @@
                         <button class="video-play-btn" aria-label="Click to watch video">
                             <span class="video-play-icon">▶</span>
                         </button>
-                        <div class="video-text">Click to watch video</div>
+                        <div class="video-text" data-i18n="video.clickToWatch">Click to watch video</div>
                     </div>
                 </div>
             </div>
 
             <!-- Contact Information -->
             <div class="contact-info">
-                <p class="contact-text">
+                <p class="contact-text" data-i18n="contact.info">
                     Please call our Freephone number <strong>0800 009 6486</strong> (8am–8pm every day) if you need help registering or have other questions. You can also email questions to <a href="mailto:nhs@sortitionfoundation.org" class="contact-link">nhs@sortitionfoundation.org</a>.
                 </p>
             </div>
 
             <!-- Scroll Indicator -->
             <div class="scroll-indicator">
-                <span class="scroll-text">Scroll down to register</span>
+                <span class="scroll-text" data-i18n="scroll.text">Scroll down to register</span>
                 <div class="scroll-arrow">▼</div>
             </div>
         </div>
@@ -110,10 +113,10 @@
                                         <div class="eligibility-card__header">
                                             <span class="eligibility-card__checkbox"></span>
                                             <div class="eligibility-card__text-content">
-                                                <span class="eligibility-card__title">I can attend all dates.</span>
+                                                <span class="eligibility-card__title" data-i18n="form.step1.canAttend">I can attend all dates.</span>
                                                 <div class="eligibility-card__details">
-                                                    <span class="eligibility-card__subtitle">I can attend the conversation on </span>
-                                                    <span class="eligibility-card__date">Saturday 30 November</span>
+                                                    <span class="eligibility-card__subtitle" data-i18n="form.step1.canAttendSubtitle">I can attend the conversation on </span>
+                                                    <span class="eligibility-card__date" data-i18n="form.step1.eventDate">Saturday 30 November</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -127,8 +130,8 @@
                                         <div class="eligibility-card__header">
                                             <span class="eligibility-card__checkbox"></span>
                                             <div class="eligibility-card__text-content">
-                                                <span class="eligibility-card__title">I am eligible to attend</span>
-                                                <div class="eligibility-card__text">
+                                                <span class="eligibility-card__title" data-i18n="form.step1.eligible">I am eligible to attend</span>
+                                                <div class="eligibility-card__text" data-i18n="form.step1.eligibleText">
                                                     I am 16 years old or over, I live in the UK, I live at an address that received an invitation and I am not an elected representative of any level of government, a paid employee of a political party, a Council employee working in a politically restricted role or a journalist (although if you are interested in attending in an observational capacity, please get in touch)
                                                 </div>
                                             </div>
@@ -299,25 +302,25 @@
                         <div class="form-group">
                             <div class="question-card">
                                 <div class="question-card__header">
-                                    <h3 class="question-card__title">What gender do you identify as?</h3>
+                                    <h3 class="question-card__title" data-i18n="form.step3.genderQuestion">What gender do you identify as?</h3>
                                 </div>
                                 <div class="question-card__options">
                                     <label class="option-card">
                                         <input type="radio" name="gender" value="male" class="option-card__input">
                                         <div class="option-card__content">
-                                            <span class="option-card__text">Male</span>
+                                            <span class="option-card__text" data-i18n="form.step3.genderMale">Male</span>
                                         </div>
                                     </label>
                                     <label class="option-card">
                                         <input type="radio" name="gender" value="female" class="option-card__input">
                                         <div class="option-card__content">
-                                            <span class="option-card__text">Female</span>
+                                            <span class="option-card__text" data-i18n="form.step3.genderFemale">Female</span>
                                         </div>
                                     </label>
                                     <label class="option-card">
                                         <input type="radio" name="gender" value="non-binary" class="option-card__input">
                                         <div class="option-card__content">
-                                            <span class="option-card__text">Non-binary<br>Other</span>
+                                            <span class="option-card__text" data-i18n="form.step3.genderNonBinary">Non-binary<br>Other</span>
                                         </div>
                                     </label>
                                 </div>
@@ -328,7 +331,7 @@
                         <div class="form-group">
                             <div class="question-card question-card--gray">
                                 <div class="question-card__header">
-                                    <h3 class="question-card__title">What is your date of birth?</h3>
+                                    <h3 class="question-card__title" data-i18n="form.step3.birthDateQuestion">What is your date of birth?</h3>
                                 </div>
                                 <div class="question-card__date-inputs">
                                     <input 
@@ -336,6 +339,7 @@
                                         id="birthDay" 
                                         name="birthDay" 
                                         class="date-input" 
+                                        data-i18n-placeholder="form.step3.dayPlaceholder"
                                         placeholder="Day"
                                         maxlength="2"
                                         pattern="[0-9]*"
@@ -345,6 +349,7 @@
                                         id="birthMonth" 
                                         name="birthMonth" 
                                         class="date-input" 
+                                        data-i18n-placeholder="form.step3.monthPlaceholder"
                                         placeholder="Month"
                                         maxlength="2"
                                         pattern="[0-9]*"
@@ -354,6 +359,7 @@
                                         id="birthYear" 
                                         name="birthYear" 
                                         class="date-input" 
+                                        data-i18n-placeholder="form.step3.yearPlaceholder"
                                         placeholder="Year"
                                         maxlength="4"
                                         pattern="[0-9]*"
@@ -366,49 +372,49 @@
                         <div class="form-group">
                             <div class="question-card">
                                 <div class="question-card__header">
-                                    <h3 class="question-card__title">What is your ethnic group?</h3>
+                                    <h3 class="question-card__title" data-i18n="form.step3.ethnicityQuestion">What is your ethnic group?</h3>
                                 </div>
                                 <div class="question-card__options">
                                     <label class="option-card">
                                         <input type="radio" name="ethnicity" value="asian-british" class="option-card__input">
                                         <div class="option-card__content">
-                                            <span class="option-card__text">Asian or Asian British</span>
+                                            <span class="option-card__text" data-i18n="form.step3.ethnicityAsian">Asian or Asian British</span>
                                         </div>
                                     </label>
                                     <label class="option-card">
                                         <input type="radio" name="ethnicity" value="black-british" class="option-card__input">
                                         <div class="option-card__content">
-                                            <span class="option-card__text">Black, African, Caribbean or Black British</span>
+                                            <span class="option-card__text" data-i18n="form.step3.ethnicityBlack">Black, African, Caribbean or Black British</span>
                                         </div>
                                     </label>
                                     <label class="option-card">
                                         <input type="radio" name="ethnicity" value="mixed-multiple" class="option-card__input">
                                         <div class="option-card__content">
-                                            <span class="option-card__text">Mixed or Multiple ethnic groups</span>
+                                            <span class="option-card__text" data-i18n="form.step3.ethnicityMixed">Mixed or Multiple ethnic groups</span>
                                         </div>
                                     </label>
                                     <label class="option-card">
                                         <input type="radio" name="ethnicity" value="white-british" class="option-card__input">
                                         <div class="option-card__content">
-                                            <span class="option-card__text">White English, Welsh, Scottish, Northern Irish or British</span>
+                                            <span class="option-card__text" data-i18n="form.step3.ethnicityWhiteBritish">White English, Welsh, Scottish, Northern Irish or British</span>
                                         </div>
                                     </label>
                                     <label class="option-card">
                                         <input type="radio" name="ethnicity" value="white-irish" class="option-card__input">
                                         <div class="option-card__content">
-                                            <span class="option-card__text">White Irish</span>
+                                            <span class="option-card__text" data-i18n="form.step3.ethnicityWhiteIrish">White Irish</span>
                                         </div>
                                     </label>
                                     <label class="option-card">
                                         <input type="radio" name="ethnicity" value="white-other" class="option-card__input">
                                         <div class="option-card__content">
-                                            <span class="option-card__text">White Other</span>
+                                            <span class="option-card__text" data-i18n="form.step3.ethnicityWhiteOther">White Other</span>
                                         </div>
                                     </label>
                                     <label class="option-card">
                                         <input type="radio" name="ethnicity" value="other" class="option-card__input">
                                         <div class="option-card__content">
-                                            <span class="option-card__text">Other ethnic group</span>
+                                            <span class="option-card__text" data-i18n="form.step3.ethnicityOther">Other ethnic group</span>
                                         </div>
                                     </label>
                                 </div>
@@ -419,25 +425,25 @@
                         <div class="form-group">
                             <div class="question-card question-card--gray">
                                 <div class="question-card__header">
-                                    <h3 class="question-card__title">Do you have any physical or mental health conditions or illnesses lasting or expected to last 12 months or more which limit your ability to carry out day-to-day activities?</h3>
+                                    <h3 class="question-card__title" data-i18n="form.step3.healthQuestion">Do you have any physical or mental health conditions or illnesses lasting or expected to last 12 months or more which limit your ability to carry out day-to-day activities?</h3>
                                 </div>
                                 <div class="question-card__options">
                                     <label class="option-card">
                                         <input type="radio" name="healthConditions" value="limited-little" class="option-card__input">
                                         <div class="option-card__content">
-                                            <span class="option-card__text">Yes, limited a little</span>
+                                            <span class="option-card__text" data-i18n="form.step3.healthLimitedLittle">Yes, limited a little</span>
                                         </div>
                                     </label>
                                     <label class="option-card">
                                         <input type="radio" name="healthConditions" value="limited-lot" class="option-card__input">
                                         <div class="option-card__content">
-                                            <span class="option-card__text">Yes, limited a lot</span>
+                                            <span class="option-card__text" data-i18n="form.step3.healthLimitedLot">Yes, limited a lot</span>
                                         </div>
                                     </label>
                                     <label class="option-card">
                                         <input type="radio" name="healthConditions" value="no" class="option-card__input">
                                         <div class="option-card__content">
-                                            <span class="option-card__text">No</span>
+                                            <span class="option-card__text" data-i18n="form.step3.healthNo">No</span>
                                         </div>
                                     </label>
                                 </div>
@@ -448,37 +454,37 @@
                         <div class="form-group">
                             <div class="question-card question-card--satisfaction">
                                 <div class="question-card__header">
-                                    <h3 class="question-card__title">All in all, how satisfied or dissatisfied would you say you are with the way in which the National Health Service runs nowadays?</h3>
+                                    <h3 class="question-card__title" data-i18n="form.step3.nhsSatisfactionQuestion">All in all, how satisfied or dissatisfied would you say you are with the way in which the National Health Service runs nowadays?</h3>
                                 </div>
                                 <div class="question-card__options">
                                     <label class="option-card">
                                         <input type="radio" name="nhsSatisfaction" value="very-dissatisfied" class="option-card__input">
                                         <div class="option-card__content">
-                                            <span class="option-card__text">Very dissatisfied</span>
+                                            <span class="option-card__text" data-i18n="form.step3.nhsVeryDissatisfied">Very dissatisfied</span>
                                         </div>
                                     </label>
                                     <label class="option-card">
                                         <input type="radio" name="nhsSatisfaction" value="quite-dissatisfied" class="option-card__input">
                                         <div class="option-card__content">
-                                            <span class="option-card__text">Quite dissatisfied</span>
+                                            <span class="option-card__text" data-i18n="form.step3.nhsQuiteDissatisfied">Quite dissatisfied</span>
                                         </div>
                                     </label>
                                     <label class="option-card">
                                         <input type="radio" name="nhsSatisfaction" value="neither" class="option-card__input">
                                         <div class="option-card__content">
-                                            <span class="option-card__text">Neither satisfied nor dissatisfied</span>
+                                            <span class="option-card__text" data-i18n="form.step3.nhsNeither">Neither satisfied nor dissatisfied</span>
                                         </div>
                                     </label>
                                     <label class="option-card">
                                         <input type="radio" name="nhsSatisfaction" value="quite-satisfied" class="option-card__input">
                                         <div class="option-card__content">
-                                            <span class="option-card__text">Quite satisfied</span>
+                                            <span class="option-card__text" data-i18n="form.step3.nhsQuiteSatisfied">Quite satisfied</span>
                                         </div>
                                     </label>
                                     <label class="option-card">
                                         <input type="radio" name="nhsSatisfaction" value="very-satisfied" class="option-card__input">
                                         <div class="option-card__content">
-                                            <span class="option-card__text">Very satisfied</span>
+                                            <span class="option-card__text" data-i18n="form.step3.nhsVerySatisfied">Very satisfied</span>
                                         </div>
                                     </label>
                                 </div>
@@ -489,49 +495,49 @@
                         <div class="form-group">
                             <div class="question-card">
                                 <div class="question-card__header">
-                                    <h3 class="question-card__title">What is your highest educational qualification?</h3>
+                                    <h3 class="question-card__title" data-i18n="form.step3.educationQuestion">What is your highest educational qualification?</h3>
                                 </div>
                                 <div class="question-card__options">
                                     <label class="option-card">
                                         <input type="radio" name="education" value="no-qualifications" class="option-card__input">
                                         <div class="option-card__content">
-                                            <span class="option-card__text">No qualifications, or none yet</span>
-                                            <span class="option-card__subtext">You have none of the qualifications (or none yet) listed below.</span>
+                                            <span class="option-card__text" data-i18n="form.step3.educationNone">No qualifications, or none yet</span>
+                                            <span class="option-card__subtext" data-i18n="form.step3.educationNoneDesc">You have none of the qualifications (or none yet) listed below.</span>
                                         </div>
                                     </label>
                                     <label class="option-card">
                                         <input type="radio" name="education" value="level-1" class="option-card__input">
                                         <div class="option-card__content">
-                                            <span class="option-card__text">Level 1</span>
-                                            <span class="option-card__subtext">Up to 4 GCSEs grade A* to C, any GCSEs at other grades, 1 AS level, NVQ level 1.</span>
+                                            <span class="option-card__text" data-i18n="form.step3.educationLevel1">Level 1</span>
+                                            <span class="option-card__subtext" data-i18n="form.step3.educationLevel1Desc">Up to 4 GCSEs grade A* to C, any GCSEs at other grades, 1 AS level, NVQ level 1.</span>
                                         </div>
                                     </label>
                                     <label class="option-card">
                                         <input type="radio" name="education" value="level-2" class="option-card__input">
                                         <div class="option-card__content">
-                                            <span class="option-card__text">Level 2</span>
-                                            <span class="option-card__subtext">5 or more GCSEs (A* to C), O levels (passes) or CSEs (1 A level, 2 to 3 AS levels, Welsh Baccalaureate Intermediate Diploma, NVQ level 2, BTEC First or General Diploma.</span>
+                                            <span class="option-card__text" data-i18n="form.step3.educationLevel2">Level 2</span>
+                                            <span class="option-card__subtext" data-i18n="form.step3.educationLevel2Desc">5 or more GCSEs (A* to C), O levels (passes) or CSEs (1 A level, 2 to 3 AS levels, Welsh Baccalaureate Intermediate Diploma, NVQ level 2, BTEC First or General Diploma.</span>
                                         </div>
                                     </label>
                                     <label class="option-card">
                                         <input type="radio" name="education" value="level-3" class="option-card__input">
                                         <div class="option-card__content">
-                                            <span class="option-card__text">Level 3</span>
-                                            <span class="option-card__subtext">2 or more A levels, 4 or more AS levels, Higher School Certificate, Welsh Baccalaureate Advanced Diploma, NVQ level 3, BTEC National.</span>
+                                            <span class="option-card__text" data-i18n="form.step3.educationLevel3">Level 3</span>
+                                            <span class="option-card__subtext" data-i18n="form.step3.educationLevel3Desc">2 or more A levels, 4 or more AS levels, Higher School Certificate, Welsh Baccalaureate Advanced Diploma, NVQ level 3, BTEC National.</span>
                                         </div>
                                     </label>
                                     <label class="option-card">
                                         <input type="radio" name="education" value="level-4-above" class="option-card__input">
                                         <div class="option-card__content">
-                                            <span class="option-card__text">Level 4 or above</span>
-                                            <span class="option-card__subtext">Degree (BA, BSc), higher degree (MA, PhD, PGCE), NVQ level 4 to 5, BTEC Higher level professional qualifications (for example, teaching, nursing, accountancy).</span>
+                                            <span class="option-card__text" data-i18n="form.step3.educationLevel4">Level 4 or above</span>
+                                            <span class="option-card__subtext" data-i18n="form.step3.educationLevel4Desc">Degree (BA, BSc), higher degree (MA, PhD, PGCE), NVQ level 4 to 5, BTEC Higher level professional qualifications (for example, teaching, nursing, accountancy).</span>
                                         </div>
                                     </label>
                                     <label class="option-card">
                                         <input type="radio" name="education" value="apprenticeship" class="option-card__input">
                                         <div class="option-card__content">
-                                            <span class="option-card__text">Apprenticeship, or other qualifications</span>
-                                            <span class="option-card__subtext">Apprenticeship, vocational or work-related qualifications, other qualifications.</span>
+                                            <span class="option-card__text" data-i18n="form.step3.educationApprenticeship">Apprenticeship, or other qualifications</span>
+                                            <span class="option-card__subtext" data-i18n="form.step3.educationApprenticeshipDesc">Apprenticeship, vocational or work-related qualifications, other qualifications.</span>
                                         </div>
                                     </label>
                                 </div>
@@ -564,7 +570,7 @@
                                         <div class="eligibility-card__header">
                                             <span class="eligibility-card__checkbox"></span>
                                             <div class="eligibility-card__text-content">
-                                                <span class="eligibility-card__title">I consent to the use of my data as described<br>on this page, and in more detail in our <a href="#" class="privacy-link">privacy policy</a>.</span>
+                                                <span class="eligibility-card__title" data-i18n="form.step4.dataConsent">I consent to the use of my data as described<br>on this page, and in more detail in our <a href="#" class="privacy-link">privacy policy</a>.</span>
                                             </div>
                                         </div>
                                     </div>
@@ -577,7 +583,7 @@
                                         <div class="eligibility-card__header">
                                             <span class="eligibility-card__checkbox"></span>
                                             <div class="eligibility-card__text-content">
-                                                <span class="eligibility-card__title">Please also inform me of similar events in the future<br>(do not delete my details after this event).</span>
+                                                <span class="eligibility-card__title" data-i18n="form.step4.futureEvents">Please also inform me of similar events in the future<br>(do not delete my details after this event).</span>
                                             </div>
                                         </div>
                                     </div>
@@ -587,14 +593,75 @@
 
                         <!-- Data Sharing Information -->
                         <div class="section-description">
-                            <p>We will share all your contact, attitudinal and demographic details with Thinks, the organisation running this event, and they will make a separate data agreement with you if you are selected to take part.</p>
+                            <p data-i18n="form.step4.dataSharing1">We will share all your contact, attitudinal and demographic details with Thinks, the organisation running this event, and they will make a separate data agreement with you if you are selected to take part.</p>
     
                             
-                            <p>Your data will be kept strictly confidential. We will delete your details within one year of the completion of the event, unless you tell us otherwise below. Please read our <a href="#" class="privacy-link">Privacy Policy</a> for more details.</p>
+                            <p data-i18n="form.step4.dataSharing2">Your data will be kept strictly confidential. We will delete your details within one year of the completion of the event, unless you tell us otherwise below. Please read our <a href="#" class="privacy-link">Privacy Policy</a> for more details.</p>
                             
-                            <p>At any time, you can withdraw your consent and ask us to delete your data, or request a copy of it, by emailing <a href="mailto:privacy@sortitionfoundation.org" class="contact-link">privacy@sortitionfoundation.org</a>.</p>
+                            <p data-i18n="form.step4.dataSharing3">At any time, you can withdraw your consent and ask us to delete your data, or request a copy of it, by emailing <a href="mailto:privacy@sortitionfoundation.org" class="contact-link">privacy@sortitionfoundation.org</a>.</p>
                             
-                            <p>If you ask us to delete your data, we will tell the other organisation(s) listed above to do the same.</p>
+                            <p data-i18n="form.step4.dataSharing4">If you ask us to delete your data, we will tell the other organisation(s) listed above to do the same.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 5: Informations -->
+                <section class="form-section form-section--fullscreen" id="section-5" data-section="5">
+                    <div class="form-section__content">
+                        <div class="section-header">
+                            <div class="step-indicator">
+                                <span class="step-number">5</span>
+                                <span class="step-divider">/</span>
+                                <span class="step-total">5</span>
+                            </div>
+                            
+                            <h2 class="section-title" data-i18n="form.step5.title">
+                                Information
+                            </h2>
+                        </div>
+
+                        <!-- Content Row: Text + Video -->
+                        <div class="info-content-row">
+                            <!-- Video Section (Mobile: Top, Desktop: Right Side) -->
+                            <div class="video-section info-content-row__video">
+                                <div class="video-thumbnail">
+                                    <img src="assets/images/ipswich-harbor.jpg" alt="Ipswich Harbor" class="video-thumbnail__image">
+                                    <div class="video-overlay">
+                                        <button class="video-play-btn" aria-label="Click to watch video">
+                                            <span class="video-play-icon">▶</span>
+                                        </button>
+                                        <div class="video-text" data-i18n="video.clickToWatch">Click to watch video</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Event Information (Mobile: Bottom, Desktop: Left Side) -->
+                            <div class="event-info info-content-row__text">
+                                <p class="event-info__text" data-i18n="form.step5.eventInfo1">
+                                    The conversation will be held on <strong>Saturday 30 November</strong> in Ipswich.
+                                </p>
+                                
+                                <p class="event-info__text" data-i18n="form.step5.eventInfo2">
+                                    In the week prior to the in-person discussions you will also be invited to take part in a 2-hour online workshop. These will be held in the evening from 6pm – 8pm.
+                                </p>
+                                
+                                <p class="event-info__text" data-i18n="form.step5.eventInfo3">
+                                    You will be able to choose the evening you attend.
+                                </p>
+                                
+                                <p class="event-info__text" data-i18n="form.step5.eventInfo4">
+                                    All participants will receive £175 as a thank you for your time. If there is anything we can do to help you to take part, we will be happy to discuss this with you.
+                                </p>
+                                
+                                <p class="event-info__text" data-i18n="form.step5.eventInfo5">
+                                    We can look into options if you do not have a video device or an internet connection - please register for the event whatever your situation, and someone will be in touch if you are selected to take part.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Partner Logos -->
+                        <div class="partner-logos partner-logos--small">
+                            <img src="assets/images/logos.png" alt="Sortition Foundation, NHS, Department of Health & Social Care" class="partner-logos__image">
                         </div>
                     </div>
                 </section>

@@ -1,187 +1,138 @@
-# NHS One-Page Website
+# NHS Participant Registration Form
 
-A mobile-first, responsive one-page website for NHS participant selection/survey system built with vanilla HTML, CSS, and JavaScript.
+A multilingual registration form for NHS participant selection and registration, built for the Sortition Foundation.
 
-## Features
+## 🌍 Languages Supported
 
-- **Mobile-First Design**: Optimized for mobile devices with responsive breakpoints
-- **Multi-Step Form**: 5-step form with progress tracking and validation
-- **Real-Time Validation**: Immediate feedback with visual state changes
-- **Data Persistence**: Auto-save form data to localStorage
-- **Registration Banner**: Fixed bottom banner tracking completion status
-- **Accessibility**: WCAG 2.1 AA compliant with screen reader support
-- **Multi-Language Support**: Built-in translation system (English/Spanish included)
-- **Progressive Enhancement**: Works without JavaScript
-- **NHS Design System**: Official NHS colors, typography, and styling
+- 🇬🇧 English
+- 🇮🇳 हिंदी (Hindi)
+- 🇨🇳 中文 (Chinese)
+- 🇵🇱 Polski (Polish)
+- 🇷🇺 Русский (Russian)
+- 🇪🇸 Español (Spanish)
+- 🇩🇪 Deutsch (German)
 
-## File Structure
+## 🚀 Deployment
 
-```
-/
-├── index.html              # Main HTML file
-├── css/
-│   ├── styles.css         # Main stylesheet
-│   ├── components.css     # Component-specific styles
-│   └── responsive.css     # Media queries and responsive design
-├── js/
-│   ├── main.js           # Main application logic
-│   ├── form-handler.js   # Form validation and step management
-│   └── utils.js          # Utility functions
-├── ARCHITECTURE.md       # Technical architecture documentation
-└── README.md            # This file
-```
+This project is configured for deployment on Netlify with the following files:
 
-## Getting Started
+- `netlify.toml` - Main Netlify configuration
+- `_redirects` - URL redirect rules
+- `_headers` - Security and performance headers
+- `package.json` - Project metadata and scripts
 
-1. **Simple Deployment**: Upload all files to a web server
-2. **Local Development**: Open `index.html` in a web browser
-3. **Live Server**: Use any local server (Python, Node.js, etc.)
+### Deploy to Netlify
 
-### Using Python (if available):
+1. **Connect your repository** to Netlify
+2. **Build settings** are automatically configured via `netlify.toml`
+3. **Deploy** - No build process required (static site)
+
+### Manual Deployment
+
 ```bash
+# Install Netlify CLI
+npm install -g netlify-cli
+
+# Deploy to Netlify
+netlify deploy --prod
+```
+
+## 📁 Project Structure
+
+```
+CODE/
+├── index.html                 # Main HTML file
+├── css/                      # Stylesheets
+│   ├── styles.css
+│   ├── components.css
+│   └── responsive.css
+├── js/                       # JavaScript files
+│   ├── main.js
+│   ├── form-handler.js
+│   └── utils.js
+├── assets/                   # Static assets
+│   ├── images/              # Images and logos
+│   ├── fonts/               # Font files
+│   └── translations/        # Translation JSON files
+│       ├── en.json          # English
+│       ├── hi.json          # Hindi
+│       ├── zh.json          # Chinese
+│       ├── pl.json          # Polish
+│       ├── ru.json          # Russian
+│       ├── es.json          # Spanish
+│       └── de.json          # German
+├── netlify.toml             # Netlify configuration
+├── _redirects               # Netlify redirects
+├── _headers                 # Netlify headers
+├── package.json             # Project metadata
+└── README.md               # This file
+```
+
+## 🔧 Features
+
+- **Multilingual Support**: 7 languages with flag emojis
+- **Responsive Design**: Works on all devices
+- **Progressive Form**: Step-by-step registration process
+- **Data Validation**: Client-side form validation
+- **Accessibility**: ARIA labels and semantic HTML
+- **Security Headers**: CSP and security headers configured
+- **Performance**: Optimized caching and compression
+
+## 🛠 Local Development
+
+```bash
+# Serve locally using Python
 python -m http.server 8000
+
+# Or using Python 3
+python3 -m http.server 8000
+
 # Visit http://localhost:8000
 ```
 
-### Using Node.js (if available):
-```bash
-npx serve .
-# Visit the provided URL
-```
+## 📝 Translation System
 
-## Usage
+The translation system uses JSON files located in `assets/translations/`. Each file contains all the text strings used in the form, organized by section:
 
-### Form Navigation
-- **Next/Previous Buttons**: Navigate between steps
-- **Registration Banner**: Click when all fields are completed
-- **Keyboard Shortcuts**:
-  - `Ctrl + Arrow Left/Right`: Navigate between steps
-  - `Alt + 1-5`: Jump to specific step
-  - `Alt + R`: Reset form
-  - `Alt + H`: Show keyboard help
+- `form.step1` - Eligibility confirmation
+- `form.step2` - Contact details
+- `form.step3` - Demographics
+- `form.step4` - Data consent
+- `form.step5` - Event information
+- `header` - Page header content
+- `language` - Language selector labels
+- `video` - Video section text
+- `contact` - Contact information
+- `scroll` - Scroll indicator
+- `banner` - Registration banner
 
-### Form Validation
-- **Real-time validation**: Fields change color as you type
-- **Visual States**:
-  - Gray: Empty field
-  - Green: Valid field
-  - Red: Invalid field
-- **Required fields**: Must be completed to proceed
+## 🔒 Security
 
-### Data Persistence
-- Form data automatically saves to browser storage
-- Data restored on page refresh
-- Cleared on successful submission
+- Content Security Policy (CSP) headers
+- XSS protection
+- Frame options to prevent clickjacking
+- Secure referrer policy
+- Content type validation
 
-### Language Support
-- Language selector in top-right corner
-- Supports English and Spanish (extensible)
-- RTL language support for Arabic/Urdu
+## 📊 Performance
 
-## Browser Support
+- Static file caching (1 year for assets)
+- Translation file caching (1 hour)
+- HTML cache invalidation
+- Optimized image loading
+- Minified and compressed assets
 
-- **Modern Browsers**: Chrome, Firefox, Safari, Edge (latest versions)
-- **Mobile**: iOS Safari 12+, Android Chrome 70+
-- **Progressive Enhancement**: Basic functionality in older browsers
+## 📞 Support
 
-## Accessibility Features
+For questions or support, contact:
+- **Phone**: 0800 009 6486 (8am–8pm daily)
+- **Email**: nhs@sortitionfoundation.org
+- **Privacy**: privacy@sortitionfoundation.org
 
-- **Keyboard Navigation**: Full keyboard support
-- **Screen Readers**: ARIA labels and announcements
-- **Focus Management**: Logical tab order
-- **High Contrast**: Support for high contrast mode
-- **Reduced Motion**: Respects user motion preferences
+## 📄 License
 
-## Customization
+MIT License - see LICENSE file for details.
 
-### Colors
-Edit CSS variables in `css/styles.css`:
-```css
-:root {
-  --color-background: #F0F0F0;
-  --color-gray-default: #D9D9D9;
-  --color-green-approval: #66D575;
-  --color-blue-banner: #31B7FF;
-  --color-black-selection: #000000;
-  --color-white-option: #FFFFFF;
-  --color-red-reject: #FF4444;
-}
-```
+---
 
-### Typography
-Modify font variables in `css/styles.css`:
-```css
-:root {
-  --font-family: Helvetica, Arial, sans-serif;
-  --font-size-h1-desktop: 80px;
-  --font-size-h2-desktop: 50px;
-  /* ... */
-}
-```
-
-### Form Fields
-Add new fields in `index.html` and update validation rules in `js/form-handler.js`:
-```javascript
-this.validationRules = {
-  newField: {
-    required: true,
-    validator: (value) => value.length > 0,
-    message: 'Please enter a value'
-  }
-};
-```
-
-## Development
-
-### Debug Mode
-Add `?debug=true` to the URL to enable debug mode:
-```
-http://localhost:8000/?debug=true
-```
-
-### URL Parameters
-- `?lang=es`: Set language
-- `?step=3`: Start at specific step
-- `?debug=true`: Enable debug mode
-
-### Adding Translations
-1. Add translations to `js/main.js` in the `I18nSystem.loadTranslationFile()` method
-2. Add language code to `supportedLanguages` array
-3. Update language selector options
-
-## Performance
-
-- **Optimized CSS**: Mobile-first approach
-- **Minimal JavaScript**: Vanilla JS, no frameworks
-- **Efficient DOM**: Event delegation and debouncing
-- **Local Storage**: Client-side data persistence
-
-## Security Considerations
-
-- **Client-side validation**: Always validate on server-side too
-- **Data storage**: localStorage data stays on user's device
-- **No external dependencies**: All code is self-contained
-
-## Deployment
-
-### Static Hosting
-Upload files to any static hosting service:
-- GitHub Pages
-- Netlify
-- Vercel
-- AWS S3
-- Traditional web hosting
-
-### Server Integration
-For server-side form processing:
-1. Update form action in `index.html`
-2. Modify `handleSubmit()` in `js/form-handler.js`
-3. Add server-side validation
-
-## License
-
-This project follows NHS digital service standards and is intended for NHS use.
-
-## Support
-
-For technical issues or questions about implementation, refer to the `ARCHITECTURE.md` file for detailed technical specifications. 
+Built with ❤️ by the Sortition Foundation for NHS participant engagement. 

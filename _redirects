@@ -1,0 +1,22 @@
+# Netlify redirects file
+# This handles client-side routing for the NHS form
+
+# Redirect all requests to index.html for client-side routing
+/*    /index.html   200
+
+# Handle specific file extensions properly
+/*.css   /css/:splat   200
+/*.js    /js/:splat    200
+/*.json  /assets/translations/:splat   200
+/*.png   /assets/images/:splat   200
+/*.jpg   /assets/images/:splat   200
+/*.jpeg  /assets/images/:splat   200
+/*.gif   /assets/images/:splat   200
+/*.svg   /assets/images/:splat   200
+/*.ico   /assets/images/:splat   200
+
+# Handle form submissions (if using Netlify Forms)
+/submit   /   302
+
+# Handle 404s
+/404      /index.html   404 
