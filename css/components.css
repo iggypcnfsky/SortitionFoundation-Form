@@ -241,6 +241,29 @@
   animation-duration: 0.001s;
 }
 
+/* Override browser auto-fill styling to respect our validation states */
+.form-field:-webkit-autofill,
+.form-field:-webkit-autofill:hover,
+.form-field:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px var(--color-gray-default) inset !important;
+  -webkit-text-fill-color: var(--color-black-selection) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.form-field.form-field--valid:-webkit-autofill,
+.form-field.form-field--valid:-webkit-autofill:hover,
+.form-field.form-field--valid:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px var(--color-green-approval) inset !important;
+  -webkit-text-fill-color: var(--color-black-selection) !important;
+}
+
+.form-field.form-field--invalid:-webkit-autofill,
+.form-field.form-field--invalid:-webkit-autofill:hover,
+.form-field.form-field--invalid:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px var(--color-red-reject) inset !important;
+  -webkit-text-fill-color: var(--color-white-option) !important;
+}
+
 @media (min-width: 768px) {
   .form-field {
     font-size: var(--font-size-h3-desktop);
@@ -1345,13 +1368,13 @@ textarea.form-field {
 }
 
 .modal-close {
-  background: var(--color-green-approval);
+  background: var(--color-black-selection);
   border: 2px solid var(--color-black-selection);
   border-radius: 0;
   font-size: 28px;
   cursor: pointer;
   padding: 8px;
-  color: var(--color-black-selection);
+  color: var(--color-white-option);
   transition: background-color var(--transition-fast), color var(--transition-fast);
   line-height: 1;
   font-weight: bold;
@@ -1363,8 +1386,8 @@ textarea.form-field {
 }
 
 .modal-close:hover {
-  background-color: var(--color-black-selection);
-  color: var(--color-green-approval);
+  background-color: var(--color-gray-default);
+  color: var(--color-black-selection);
 }
 
 .modal-close:focus {
