@@ -101,13 +101,14 @@ body {
   background: #E8E8E8;
   color: var(--color-black-selection);
   border: none;
-  padding: 10px 16px;
+  padding: 8px 12px;
   font-family: var(--font-family);
-  font-size: 13px;
+  font-size: 18px;
   cursor: pointer;
   transition: all var(--transition-fast);
   border-radius: 4px;
   font-weight: 500;
+  line-height: 1;
 }
 
 .language-btn:first-child {
@@ -145,12 +146,6 @@ body {
 
   .language-btn:last-child {
     border-radius: 4px;
-  }
-  
-  /* Hide text content on mobile, show only emoji */
-  .language-btn {
-    font-size: 18px;
-    line-height: 1;
   }
 }
 
@@ -278,6 +273,11 @@ p {
   
   .logo__image {
     max-height: 120px; /* 4x bigger: 60px * 4 = 240px */
+  }
+  
+  /* Make DHSC logo 20% smaller on mobile */
+  .logo--dhsc .logo__image {
+    max-height: 96px; /* 20% smaller: 120px * 0.8 = 96px */
   }
 }
 

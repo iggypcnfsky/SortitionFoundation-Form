@@ -72,42 +72,6 @@ class NHSApp {
         }
       });
     });
-    
-    // Set up mobile language button display
-    this.setupMobileLanguageButtons();
-  }
-  
-  setupMobileLanguageButtons() {
-    const languageButtons = document.querySelectorAll('.language-btn');
-    
-    const updateLanguageButtons = () => {
-      const isMobile = window.innerWidth <= 767;
-      
-      languageButtons.forEach(button => {
-        const originalText = button.getAttribute('data-i18n');
-        if (isMobile) {
-          // Extract emoji from the text content
-          const text = button.textContent;
-          const emojiMatch = text.match(/[\u{1F1E0}-\u{1F1FF}]{2}/u);
-          if (emojiMatch) {
-            button.textContent = emojiMatch[0];
-          }
-        } else {
-          // Restore full text on desktop
-          if (originalText) {
-            // Re-translate the button
-            const translatedText = this.i18n ? this.i18n.t(originalText) : button.textContent;
-            button.textContent = translatedText;
-          }
-        }
-      });
-    };
-    
-    // Initial setup
-    updateLanguageButtons();
-    
-    // Update on resize
-    window.addEventListener('resize', NHS.Events.throttle(updateLanguageButtons, 250));
   }
 
   async changeLanguage(languageCode) {

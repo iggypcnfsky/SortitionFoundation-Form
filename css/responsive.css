@@ -199,7 +199,7 @@
 /* Small Mobile Devices (320px - 480px) */
 @media (max-width: 480px) {
   :root {
-    --grid-margin: 16px;
+    --grid-margin: 10px;
   }
   
   .header__title {
@@ -250,7 +250,7 @@
 /* Very Small Devices (below 320px) */
 @media (max-width: 319px) {
   :root {
-    --grid-margin: 12px;
+    --grid-margin: 10px;
   }
   
   .header__title {
