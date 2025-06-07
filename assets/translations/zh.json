@@ -108,5 +108,14 @@
   "banner": {
     "register": "点击注册。所有选定的参与者将获得175英镑。",
     "fieldsCompleted": "字段已完成"
+  },
+  "modal": {
+    "success": {
+      "title": "成功！",
+      "description": "感谢您的注册！您的申请已成功提交。您将很快收到确认邮件。",
+      "nextSteps": "<strong>下一步：</strong><br>• 您将在24小时内收到确认邮件<br>• 如果被选中，我们将通过电话或邮件联系您<br>• 所有被选中的参与者将获得175英镑",
+      "close": "关闭"
+    },
+    "close": "关闭模态框"
   }
 } 

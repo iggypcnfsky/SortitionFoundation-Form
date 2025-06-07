@@ -683,6 +683,40 @@
         </div>
     </div>
 
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="successModal" role="dialog" aria-labelledby="successModalTitle" aria-describedby="successModalDesc" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="successModalTitle" data-i18n="modal.success.title">Success!</h2>
+                <button class="modal-close" aria-label="Close modal" data-i18n-aria-label="modal.close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="success-icon">
+                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" fill="#66D575"/>
+                        <path d="m9 12 2 2 4-4" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <p class="modal-description" id="successModalDesc" data-i18n="modal.success.description">
+                    Thank you for registering! Your application has been submitted successfully. You will receive a confirmation email shortly.
+                </p>
+                <div class="modal-details">
+                    <p data-i18n="modal.success.nextSteps">
+                        <strong>Next steps:</strong><br>
+                        • You will receive a confirmation email within 24 hours<br>
+                        • If selected, we will contact you by phone or email<br>
+                        • All selected participants will receive £175
+                    </p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn--primary modal-confirm" data-i18n="modal.success.close">Close</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="js/utils.js"></script>
     <script src="js/form-handler.js"></script>

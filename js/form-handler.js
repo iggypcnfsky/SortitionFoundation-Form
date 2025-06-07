@@ -196,7 +196,7 @@ class FormHandler {
     if (this.registrationBanner) {
       this.registrationBanner.addEventListener('click', () => {
         if (NHS.DOM.hasClass(this.registrationBanner, 'registration-banner--active')) {
-          this.nextStep();
+          this.handleFormSubmission();
         }
       });
       
@@ -204,19 +204,19 @@ class FormHandler {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
           if (NHS.DOM.hasClass(this.registrationBanner, 'registration-banner--active')) {
-            this.nextStep();
+            this.handleFormSubmission();
           }
         }
       });
     }
 
-    // Auto-save on form changes
+    // Auto-save on form changes (debounced to prevent excessive saves)
     NHS.Events.on(this.form, 'input', () => {
       NHS.Events.debounce(() => this.saveFormData(), 500)();
     });
     
     NHS.Events.on(this.form, 'change', () => {
-      this.saveFormData();
+      NHS.Events.debounce(() => this.saveFormData(), 100)();
     });
 
     // Keyboard navigation
@@ -637,12 +637,19 @@ class FormHandler {
         NHS.DOM.removeClass(field, 'form-field--invalid');
         NHS.DOM.addClass(field, `form-field--${fieldData.validationState || 'empty'}`);
         
-        // Update option buttons for radio inputs
+        // Update UI states for different field types
         if (field.type === 'radio' && field.checked) {
           this.updateOptionButtons(field);
+          this.updateOptionCards(field);
+          this.updateQuestionCardState(field);
+        } else if (field.type === 'checkbox') {
+          this.updateEligibilityCards(field);
         }
       }
     });
+    
+    // Update registration banner after restoring data
+    this.updateRegistrationBanner();
   }
 
   handleSubmit(e) {
@@ -665,6 +672,51 @@ class FormHandler {
     setTimeout(() => {
       this.onSubmissionSuccess(finalFormData);
     }, 2000);
+  }
+
+  handleFormSubmission() {
+    // Check if all required fields are completed
+    const { completed, total } = this.getCompletionStatus();
+    
+    if (completed === total) {
+      // All fields completed, show success modal
+      this.showSuccessModal();
+    } else {
+      // Not all fields completed, show validation message
+      NHS.A11y.announce(`Please complete all ${total} required fields. Currently ${completed} of ${total} completed.`, 'assertive');
+      
+      // Scroll to first incomplete field
+      this.scrollToFirstIncompleteField();
+    }
+  }
+
+  scrollToFirstIncompleteField() {
+    const allRequiredFields = this.requiredFields.flat();
+    
+    for (const fieldName of allRequiredFields) {
+      const fields = this.form.querySelectorAll(`[name="${fieldName}"]`);
+      if (fields.length === 0) continue;
+      
+      const firstField = fields[0];
+      let isComplete = false;
+      
+      // Check if field is completed
+      if (firstField.type === 'radio') {
+        const checkedRadio = this.form.querySelector(`[name="${fieldName}"]:checked`);
+        isComplete = !!checkedRadio;
+      } else if (firstField.type === 'checkbox') {
+        isComplete = firstField.checked;
+      } else {
+        isComplete = !!firstField.value.trim();
+      }
+      
+      if (!isComplete) {
+        // Scroll to this field
+        firstField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        firstField.focus();
+        break;
+      }
+    }
   }
 
   onSubmissionSuccess(formData) {
@@ -695,6 +747,85 @@ class FormHandler {
     if (this.registrationBanner) {
       this.registrationBanner.style.display = 'none';
     }
+  }
+
+  showSuccessModal() {
+    const modal = document.getElementById('successModal');
+    if (!modal) return;
+    
+    // Show modal
+    modal.classList.add('modal--visible');
+    modal.setAttribute('aria-hidden', 'false');
+    
+    // Focus management
+    const closeButton = modal.querySelector('.modal-close');
+    const confirmButton = modal.querySelector('.modal-confirm');
+    
+    if (closeButton) {
+      closeButton.focus();
+    }
+    
+    // Set up event listeners
+    const closeModal = () => {
+      this.hideSuccessModal();
+    };
+    
+    // Close button
+    if (closeButton) {
+      closeButton.addEventListener('click', closeModal);
+    }
+    
+    // Confirm button
+    if (confirmButton) {
+      confirmButton.addEventListener('click', closeModal);
+    }
+    
+    // Escape key
+    const handleKeydown = (e) => {
+      if (e.key === 'Escape') {
+        closeModal();
+        document.removeEventListener('keydown', handleKeydown);
+      }
+    };
+    document.addEventListener('keydown', handleKeydown);
+    
+    // Click outside modal
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+    
+    // Announce to screen readers
+    NHS.A11y.announce('Registration successful! Modal dialog opened.', 'assertive');
+    
+    // Simulate form submission
+    setTimeout(() => {
+      // Clear saved data
+      NHS.Storage.remove('nhsFormData');
+      
+      // Hide registration banner
+      if (this.registrationBanner) {
+        this.registrationBanner.style.display = 'none';
+      }
+    }, 1000);
+  }
+
+  hideSuccessModal() {
+    const modal = document.getElementById('successModal');
+    if (!modal) return;
+    
+    // Hide modal
+    modal.classList.remove('modal--visible');
+    modal.setAttribute('aria-hidden', 'true');
+    
+    // Return focus to registration banner or form
+    if (this.registrationBanner) {
+      this.registrationBanner.focus();
+    }
+    
+    // Announce to screen readers
+    NHS.A11y.announce('Modal closed.', 'polite');
   }
 
   // Public methods for external access

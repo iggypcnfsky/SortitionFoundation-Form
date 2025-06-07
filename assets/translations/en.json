@@ -108,5 +108,14 @@
   "banner": {
     "register": "Click to Register. All selected participants will receive £175.",
     "fieldsCompleted": "fields completed"
+  },
+  "modal": {
+    "success": {
+      "title": "Success!",
+      "description": "Thank you for registering! Your application has been submitted successfully. You will receive a confirmation email shortly.",
+      "nextSteps": "<strong>Next steps:</strong><br>• You will receive a confirmation email within 24 hours<br>• If selected, we will contact you by phone or email<br>• All selected participants will receive £175",
+      "close": "Close"
+    },
+    "close": "Close modal"
   }
 } 

@@ -108,5 +108,14 @@
   "banner": {
     "register": "Klicken Sie zur Registrierung. Alle ausgewählten Teilnehmer erhalten £175.",
     "fieldsCompleted": "Felder ausgefüllt"
+  },
+  "modal": {
+    "success": {
+      "title": "Erfolg!",
+      "description": "Vielen Dank für Ihre Registrierung! Ihre Bewerbung wurde erfolgreich eingereicht. Sie erhalten in Kürze eine Bestätigungs-E-Mail.",
+      "nextSteps": "<strong>Nächste Schritte:</strong><br>• Sie erhalten innerhalb von 24 Stunden eine Bestätigungs-E-Mail<br>• Falls Sie ausgewählt werden, kontaktieren wir Sie telefonisch oder per E-Mail<br>• Alle ausgewählten Teilnehmer erhalten £175",
+      "close": "Schließen"
+    },
+    "close": "Modal schließen"
   }
 } 
