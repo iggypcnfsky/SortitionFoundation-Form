@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="form.title">NHS Participant Registration</title>
+    <meta name="description" content="NHS participant selection and registration form">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button class="language-btn language-btn--active" data-lang="en">English</button>
+        <button class="language-btn" data-lang="hi">भारतीय</button>
+        <button class="language-btn" data-lang="zh">中文</button>
+        <button class="language-btn" data-lang="other">Other</button>
+    </div>
+
+    <!-- Header Section -->
+    <header class="header" role="banner">
+        <div class="container">
+            <!-- Logos Section -->
+            <div class="logos">
+                <!-- Individual logos for mobile -->
+                <div class="logo logo--sortition">
+                    <img src="assets/images/sortition-logo.png" alt="Sortition Foundation" class="logo__image">
+                </div>
+                <div class="logo logo--nhs">
+                    <img src="assets/images/nhs-logo.png" alt="NHS" class="logo__image">
+                </div>
+                <div class="logo logo--dhsc">
+                    <img src="assets/images/dhsc-logo.png" alt="Department of Health & Social Care" class="logo__image">
+                </div>
+                
+                <!-- Combined horizontal logo for desktop -->
+                <img src="assets/images/logos.png" alt="Sortition Foundation, NHS, Department of Health & Social Care" class="logos__combined">
+            </div>
+
+            <!-- Main Header Content -->
+            <div class="header__content">
+                <h1 class="header__title" data-i18n="header.title">
+                    You have been randomly selected to help shape the future of NHS.
+                </h1>
+                <p class="header__subtitle" data-i18n="header.subtitle">
+                    This form will take less than 3 minutes. <strong>All selected participants will receive £175.</strong>
+                </p>
+            </div>
+
+            <!-- Video Section -->
+            <div class="video-section">
+                <div class="video-thumbnail">
+                    <img src="assets/images/ipswich-harbor.jpg" alt="Ipswich Harbor" class="video-thumbnail__image">
+                    <div class="video-overlay">
+                        <button class="video-play-btn" aria-label="Click to watch video">
+                            <span class="video-play-icon">▶</span>
+                        </button>
+                        <div class="video-text">Click to watch video</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <p class="contact-text">
+                    Please call our Freephone number <strong>0800 009 6486</strong> (8am–8pm every day) if you need help registering or have other questions. You can also email questions to <a href="mailto:nhs@sortitionfoundation.org" class="contact-link">nhs@sortitionfoundation.org</a>.
+                </p>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator">
+                <span class="scroll-text">Scroll down to register</span>
+                <div class="scroll-arrow">▼</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main" role="main">
+        <div class="container">
+
+
+            <!-- Long Scroll Form -->
+            <form class="form" id="nhsForm" novalidate>
+                
+                <!-- Section 1: Eligibility Confirmation -->
+                <section class="form-section" id="section-1">
+                    <div class="form-section__content">
+                        <h2 class="form-section__title" data-i18n="form.step1.title">Eligibility Confirmation</h2>
+                        <p class="form-section__description" data-i18n="form.step1.description">
+                            Please confirm that you are eligible to participate in this NHS survey.
+                        </p>
+                        
+                        <div class="form-group">
+                            <fieldset class="form-fieldset">
+                                <legend class="form-legend" data-i18n="form.step1.question">
+                                    Are you eligible to participate?
+                                </legend>
+                                
+                                <div class="form-options">
+                                    <label class="option-button option-button--unselected">
+                                        <input type="radio" name="eligibility" value="yes" class="option-button__input" required>
+                                        <span class="option-button__text" data-i18n="form.step1.yes">Yes</span>
+                                    </label>
+                                    
+                                    <label class="option-button option-button--unselected">
+                                        <input type="radio" name="eligibility" value="no" class="option-button__input" required>
+                                        <span class="option-button__text" data-i18n="form.step1.no">No</span>
+                                    </label>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 2: Contact Details -->
+                <section class="form-section" id="section-2">
+                    <div class="form-section__content">
+                        <h2 class="form-section__title" data-i18n="form.step2.title">Contact Details</h2>
+                        <p class="form-section__description" data-i18n="form.step2.description">
+                            Please provide your contact information.
+                        </p>
+                        
+                        <div class="form-group">
+                            <label for="firstName" class="form-label" data-i18n="form.step2.firstName">First Name</label>
+                            <input 
+                                type="text" 
+                                id="firstName" 
+                                name="firstName" 
+                                class="form-field form-field--empty" 
+                                required
+                                data-i18n-placeholder="form.step2.firstNamePlaceholder"
+                                placeholder="Enter your first name"
+                            >
+                            <div class="form-error" role="alert"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName" class="form-label" data-i18n="form.step2.lastName">Last Name</label>
+                            <input 
+                                type="text" 
+                                id="lastName" 
+                                name="lastName" 
+                                class="form-field form-field--empty" 
+                                required
+                                data-i18n-placeholder="form.step2.lastNamePlaceholder"
+                                placeholder="Enter your last name"
+                            >
+                            <div class="form-error" role="alert"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label" data-i18n="form.step2.email">Email Address</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                class="form-field form-field--empty" 
+                                required
+                                data-i18n-placeholder="form.step2.emailPlaceholder"
+                                placeholder="Enter your email address"
+                            >
+                            <div class="form-error" role="alert"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="form-label" data-i18n="form.step2.phone">Phone Number</label>
+                            <input 
+                                type="tel" 
+                                id="phone" 
+                                name="phone" 
+                                class="form-field form-field--empty" 
+                                required
+                                data-i18n-placeholder="form.step2.phonePlaceholder"
+                                placeholder="Enter your phone number"
+                            >
+                            <div class="form-error" role="alert"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 3: Personal Information -->
+                <section class="form-section" id="section-3">
+                    <div class="form-section__content">
+                        <h2 class="form-section__title" data-i18n="form.step3.title">Personal Information</h2>
+                        <p class="form-section__description" data-i18n="form.step3.description">
+                            This information helps us understand our participants better.
+                        </p>
+                        
+                        <div class="form-group">
+                            <label for="dateOfBirth" class="form-label" data-i18n="form.step3.dateOfBirth">Date of Birth</label>
+                            <input 
+                                type="date" 
+                                id="dateOfBirth" 
+                                name="dateOfBirth" 
+                                class="form-field form-field--empty" 
+                                required
+                            >
+                            <div class="form-error" role="alert"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <fieldset class="form-fieldset">
+                                <legend class="form-legend" data-i18n="form.step3.gender">Gender</legend>
+                                <div class="form-options">
+                                    <label class="option-button option-button--unselected">
+                                        <input type="radio" name="gender" value="male" class="option-button__input" required>
+                                        <span class="option-button__text" data-i18n="form.step3.male">Male</span>
+                                    </label>
+                                    
+                                    <label class="option-button option-button--unselected">
+                                        <input type="radio" name="gender" value="female" class="option-button__input" required>
+                                        <span class="option-button__text" data-i18n="form.step3.female">Female</span>
+                                    </label>
+                                    
+                                    <label class="option-button option-button--unselected">
+                                        <input type="radio" name="gender" value="other" class="option-button__input" required>
+                                        <span class="option-button__text" data-i18n="form.step3.other">Other</span>
+                                    </label>
+                                    
+                                    <label class="option-button option-button--unselected">
+                                        <input type="radio" name="gender" value="prefer-not-to-say" class="option-button__input" required>
+                                        <span class="option-button__text" data-i18n="form.step3.preferNotToSay">Prefer not to say</span>
+                                    </label>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="postcode" class="form-label" data-i18n="form.step3.postcode">Postcode</label>
+                            <input 
+                                type="text" 
+                                id="postcode" 
+                                name="postcode" 
+                                class="form-field form-field--empty" 
+                                required
+                                data-i18n-placeholder="form.step3.postcodePlaceholder"
+                                placeholder="Enter your postcode"
+                            >
+                            <div class="form-error" role="alert"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 4: Data Consent -->
+                <section class="form-section" id="section-4">
+                    <div class="form-section__content">
+                        <h2 class="form-section__title" data-i18n="form.step4.title">Data Consent</h2>
+                        <p class="form-section__description" data-i18n="form.step4.description">
+                            Please review and accept our data usage terms.
+                        </p>
+                        
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input 
+                                    type="checkbox" 
+                                    name="dataConsent" 
+                                    class="checkbox-input" 
+                                    required
+                                >
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-text" data-i18n="form.step4.consentCheckbox">
+                                    I consent to the collection and processing of my personal data
+                                </span>
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input 
+                                    type="checkbox" 
+                                    name="marketingConsent" 
+                                    class="checkbox-input"
+                                >
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-text" data-i18n="form.step4.marketingCheckbox">
+                                    I would like to receive updates about NHS research (optional)
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 5: Final Information -->
+                <section class="form-section" id="section-5">
+                    <div class="form-section__content">
+                        <h2 class="form-section__title" data-i18n="form.step5.title">Final Information</h2>
+                        <p class="form-section__description" data-i18n="form.step5.description">
+                            Any additional information you'd like to share?
+                        </p>
+                        
+                        <div class="form-group">
+                            <label for="additionalInfo" class="form-label" data-i18n="form.step5.additionalInfo">
+                                Additional Comments (Optional)
+                            </label>
+                            <textarea 
+                                id="additionalInfo" 
+                                name="additionalInfo" 
+                                class="form-field form-field--empty" 
+                                rows="4"
+                                data-i18n-placeholder="form.step5.additionalInfoPlaceholder"
+                                placeholder="Share any additional thoughts..."
+                            ></textarea>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Submit Button -->
+                <div class="form-submit">
+                    <button type="submit" class="btn btn--primary btn--large" id="submitBtn">
+                        <span data-i18n="navigation.submit">Submit Registration</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Registration Banner -->
+    <div class="registration-banner registration-banner--inactive" id="registrationBanner" role="button" tabindex="0">
+        <div class="registration-banner__content">
+            <div class="registration-banner__text">
+                <span data-i18n="banner.register">Click to Register. All selected participants will receive £175.</span>
+            </div>
+            <div class="registration-banner__progress">
+                <span id="fieldProgress" data-i18n="banner.progress">4/12 fields completed</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/form-handler.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
