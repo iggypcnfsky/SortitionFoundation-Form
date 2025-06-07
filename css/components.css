@@ -11,7 +11,7 @@
   grid-column: 1 / -1;
   display: block;
   margin-bottom: 0;
-  padding: 4rem 0;
+  padding: 2rem 0;
   border-bottom: none;
 }
 
@@ -19,12 +19,12 @@
   display: block;
   margin-bottom: 0;
   border-bottom: none;
-  padding: 4rem 0;
+  padding: 2rem 0;
 }
 
 @media (min-width: 768px) {
   .form-section--fullscreen {
-    padding: 6rem 0;
+    padding: 3rem 0;
   }
 }
 
@@ -52,7 +52,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 @media (min-width: 768px) {
@@ -61,18 +61,18 @@
     align-items: baseline;
     justify-content: flex-start;
     gap: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 }
 
 /* Step Indicator */
 .step-indicator {
   text-align: left;
-  margin-bottom: 2rem;
-  font-size: var(--font-size-h1-mobile);
+  margin-bottom: 1rem;
+  font-size: var(--font-size-h2-mobile);
   font-weight: 300;
   color: var(--color-black-selection);
-  letter-spacing: var(--letter-spacing-h1);
+  letter-spacing: var(--letter-spacing-h2);
 }
 
 .step-number {
@@ -1024,7 +1024,7 @@ textarea.form-field {
 
 .registration-banner__text {
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 700;
   text-align: left;
   color: #000000;
 }
@@ -1045,15 +1045,17 @@ textarea.form-field {
   .registration-banner__content {
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     gap: 20px; /* Increased gap */
   }
   
   .registration-banner__text {
     text-align: left;
     font-size: var(--font-size-h2-mobile);
-    font-weight: 400;
-    flex: 1;
+    font-weight: 700;
+    flex: 0 0 auto;
+    max-width: 50%;
+    width: auto;
   }
   
   .registration-banner__progress {
