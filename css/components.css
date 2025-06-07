@@ -1456,6 +1456,16 @@ textarea.form-field {
 
 .modal-confirm {
   min-width: 140px;
+  background-color: var(--color-black-selection) !important;
+  color: var(--color-white-option) !important;
+  border-color: var(--color-black-selection) !important;
+  border-radius: 0 !important;
+}
+
+.modal-confirm:hover:not(:disabled) {
+  background-color: var(--color-gray-default) !important;
+  color: var(--color-black-selection) !important;
+  border-color: var(--color-gray-default) !important;
 }
 
 /* Modal animations */
