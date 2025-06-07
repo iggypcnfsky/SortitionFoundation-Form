@@ -283,7 +283,7 @@ p {
   .logos {
     grid-column: 1 / -1;
     gap: 50px;
-    margin: 4rem 0 3rem 0;
+    margin: 4rem 0 1rem 0;
     padding: 0 20px;
   }
   
@@ -351,7 +351,7 @@ p {
   
   .header__content {
     grid-column: 1 / -1;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     max-width: 900px;
     padding: 0 20px;
   }
@@ -369,7 +369,7 @@ p {
 @media (min-width: 1024px) {
   .header__content {
     max-width: 1000px;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
   }
   
   .header__subtitle {
