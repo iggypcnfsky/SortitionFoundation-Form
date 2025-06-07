@@ -141,15 +141,27 @@
                 </section>
 
                 <!-- Section 2: Contact Details -->
-                <section class="form-section" id="section-2">
+                <section class="form-section form-section--fullscreen" id="section-2" data-section="2">
                     <div class="form-section__content">
-                        <h2 class="form-section__title" data-i18n="form.step2.title">Contact Details</h2>
-                        <p class="form-section__description" data-i18n="form.step2.description">
-                            Please provide your contact information.
-                        </p>
+                        <div class="section-header">
+                            <div class="step-indicator">
+                                <span class="step-number">2</span>
+                                <span class="step-divider">/</span>
+                                <span class="step-total">5</span>
+                            </div>
+                            
+                            <h2 class="section-title" data-i18n="form.step2.title">
+                                Name, contact details and address
+                            </h2>
+                        </div>
+                        
+                        <div class="section-description">
+                            <p data-i18n="form.step2.description">
+                                We use the following contact details in order to communicate with you about this event.
+                            </p>
+                        </div>
                         
                         <div class="form-group">
-                            <label for="firstName" class="form-label" data-i18n="form.step2.firstName">First Name</label>
                             <input 
                                 type="text" 
                                 id="firstName" 
@@ -157,13 +169,12 @@
                                 class="form-field form-field--empty" 
                                 required
                                 data-i18n-placeholder="form.step2.firstNamePlaceholder"
-                                placeholder="Enter your first name"
+                                placeholder="First Name"
                             >
                             <div class="form-error" role="alert"></div>
                         </div>
 
                         <div class="form-group">
-                            <label for="lastName" class="form-label" data-i18n="form.step2.lastName">Last Name</label>
                             <input 
                                 type="text" 
                                 id="lastName" 
@@ -171,13 +182,12 @@
                                 class="form-field form-field--empty" 
                                 required
                                 data-i18n-placeholder="form.step2.lastNamePlaceholder"
-                                placeholder="Enter your last name"
+                                placeholder="Last Name"
                             >
                             <div class="form-error" role="alert"></div>
                         </div>
 
                         <div class="form-group">
-                            <label for="email" class="form-label" data-i18n="form.step2.email">Email Address</label>
                             <input 
                                 type="email" 
                                 id="email" 
@@ -185,13 +195,20 @@
                                 class="form-field form-field--empty" 
                                 required
                                 data-i18n-placeholder="form.step2.emailPlaceholder"
-                                placeholder="Enter your email address"
+                                placeholder="Email"
                             >
                             <div class="form-error" role="alert"></div>
                         </div>
+                        
+                        <div class="form-group">
+                            <div class="form-note">
+                                <p class="form-note-text" data-i18n="form.step2.emailNote">
+                                    Every person who registers online <strong>must have their own individual email address.</strong> If you do not have an email address, or you share one with someone else who is registering, please ring the Freephone number above to register.
+                                </p>
+                            </div>
+                        </div>
 
                         <div class="form-group">
-                            <label for="phone" class="form-label" data-i18n="form.step2.phone">Phone Number</label>
                             <input 
                                 type="tel" 
                                 id="phone" 
@@ -199,145 +216,390 @@
                                 class="form-field form-field--empty" 
                                 required
                                 data-i18n-placeholder="form.step2.phonePlaceholder"
-                                placeholder="Enter your phone number"
+                                placeholder="Phone (mobile or home)"
+                            >
+                            <div class="form-error" role="alert"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <input 
+                                type="text" 
+                                id="addressLine1" 
+                                name="addressLine1" 
+                                class="form-field form-field--empty" 
+                                required
+                                data-i18n-placeholder="form.step2.addressLine1Placeholder"
+                                placeholder="Address Line 1"
+                            >
+                            <div class="form-error" role="alert"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <input 
+                                type="text" 
+                                id="addressLine2" 
+                                name="addressLine2" 
+                                class="form-field form-field--empty"
+                                data-i18n-placeholder="form.step2.addressLine2Placeholder"
+                                placeholder="Address Line 2"
+                            >
+                            <div class="form-error" role="alert"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <input 
+                                type="text" 
+                                id="city" 
+                                name="city" 
+                                class="form-field form-field--empty" 
+                                required
+                                data-i18n-placeholder="form.step2.cityPlaceholder"
+                                placeholder="City"
+                            >
+                            <div class="form-error" role="alert"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <input 
+                                type="text" 
+                                id="postCode" 
+                                name="postCode" 
+                                class="form-field form-field--empty" 
+                                required
+                                data-i18n-placeholder="form.step2.postCodePlaceholder"
+                                placeholder="Post Code"
                             >
                             <div class="form-error" role="alert"></div>
                         </div>
                     </div>
                 </section>
 
-                <!-- Section 3: Personal Information -->
-                <section class="form-section" id="section-3">
+                <!-- Section 3: About You -->
+                <section class="form-section form-section--fullscreen" id="section-3" data-section="3">
                     <div class="form-section__content">
-                        <h2 class="form-section__title" data-i18n="form.step3.title">Personal Information</h2>
-                        <p class="form-section__description" data-i18n="form.step3.description">
-                            This information helps us understand our participants better.
-                        </p>
-                        
-                        <div class="form-group">
-                            <label for="dateOfBirth" class="form-label" data-i18n="form.step3.dateOfBirth">Date of Birth</label>
-                            <input 
-                                type="date" 
-                                id="dateOfBirth" 
-                                name="dateOfBirth" 
-                                class="form-field form-field--empty" 
-                                required
-                            >
-                            <div class="form-error" role="alert"></div>
+                        <div class="section-header">
+                            <div class="step-indicator">
+                                <span class="step-number">3</span>
+                                <span class="step-divider">/</span>
+                                <span class="step-total">5</span>
+                            </div>
+                            
+                            <h2 class="section-title" data-i18n="form.step3.title">
+                                About You
+                            </h2>
                         </div>
-
+                        
+                        <div class="section-description">
+                            <p data-i18n="form.step3.description">
+                                We use the following details in our democratic lottery process, to select a group of participants that broadly represents the entire community.
+                            </p>
+                        </div>
+                        
+                        <!-- Gender Selection -->
                         <div class="form-group">
-                            <fieldset class="form-fieldset">
-                                <legend class="form-legend" data-i18n="form.step3.gender">Gender</legend>
-                                <div class="form-options">
-                                    <label class="option-button option-button--unselected">
-                                        <input type="radio" name="gender" value="male" class="option-button__input" required>
-                                        <span class="option-button__text" data-i18n="form.step3.male">Male</span>
+                            <div class="question-card">
+                                <div class="question-card__header">
+                                    <h3 class="question-card__title">What gender do you identify as?</h3>
+                                </div>
+                                <div class="question-card__options">
+                                    <label class="option-card">
+                                        <input type="radio" name="gender" value="male" class="option-card__input">
+                                        <div class="option-card__content">
+                                            <span class="option-card__text">Male</span>
+                                        </div>
                                     </label>
-                                    
-                                    <label class="option-button option-button--unselected">
-                                        <input type="radio" name="gender" value="female" class="option-button__input" required>
-                                        <span class="option-button__text" data-i18n="form.step3.female">Female</span>
+                                    <label class="option-card">
+                                        <input type="radio" name="gender" value="female" class="option-card__input">
+                                        <div class="option-card__content">
+                                            <span class="option-card__text">Female</span>
+                                        </div>
                                     </label>
-                                    
-                                    <label class="option-button option-button--unselected">
-                                        <input type="radio" name="gender" value="other" class="option-button__input" required>
-                                        <span class="option-button__text" data-i18n="form.step3.other">Other</span>
-                                    </label>
-                                    
-                                    <label class="option-button option-button--unselected">
-                                        <input type="radio" name="gender" value="prefer-not-to-say" class="option-button__input" required>
-                                        <span class="option-button__text" data-i18n="form.step3.preferNotToSay">Prefer not to say</span>
+                                    <label class="option-card">
+                                        <input type="radio" name="gender" value="non-binary" class="option-card__input">
+                                        <div class="option-card__content">
+                                            <span class="option-card__text">Non-binary<br>Other</span>
+                                        </div>
                                     </label>
                                 </div>
-                            </fieldset>
+                            </div>
                         </div>
 
+                        <!-- Date of Birth -->
                         <div class="form-group">
-                            <label for="postcode" class="form-label" data-i18n="form.step3.postcode">Postcode</label>
-                            <input 
-                                type="text" 
-                                id="postcode" 
-                                name="postcode" 
-                                class="form-field form-field--empty" 
-                                required
-                                data-i18n-placeholder="form.step3.postcodePlaceholder"
-                                placeholder="Enter your postcode"
-                            >
-                            <div class="form-error" role="alert"></div>
+                            <div class="question-card question-card--gray">
+                                <div class="question-card__header">
+                                    <h3 class="question-card__title">What is your date of birth?</h3>
+                                </div>
+                                <div class="question-card__date-inputs">
+                                    <input 
+                                        type="text" 
+                                        id="birthDay" 
+                                        name="birthDay" 
+                                        class="date-input" 
+                                        placeholder="Day"
+                                        maxlength="2"
+                                        pattern="[0-9]*"
+                                    >
+                                    <input 
+                                        type="text" 
+                                        id="birthMonth" 
+                                        name="birthMonth" 
+                                        class="date-input" 
+                                        placeholder="Month"
+                                        maxlength="2"
+                                        pattern="[0-9]*"
+                                    >
+                                    <input 
+                                        type="text" 
+                                        id="birthYear" 
+                                        name="birthYear" 
+                                        class="date-input" 
+                                        placeholder="Year"
+                                        maxlength="4"
+                                        pattern="[0-9]*"
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ethnic Group -->
+                        <div class="form-group">
+                            <div class="question-card">
+                                <div class="question-card__header">
+                                    <h3 class="question-card__title">What is your ethnic group?</h3>
+                                </div>
+                                <div class="question-card__options">
+                                    <label class="option-card">
+                                        <input type="radio" name="ethnicity" value="asian-british" class="option-card__input">
+                                        <div class="option-card__content">
+                                            <span class="option-card__text">Asian or Asian British</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="ethnicity" value="black-british" class="option-card__input">
+                                        <div class="option-card__content">
+                                            <span class="option-card__text">Black, African, Caribbean or Black British</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="ethnicity" value="mixed-multiple" class="option-card__input">
+                                        <div class="option-card__content">
+                                            <span class="option-card__text">Mixed or Multiple ethnic groups</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="ethnicity" value="white-british" class="option-card__input">
+                                        <div class="option-card__content">
+                                            <span class="option-card__text">White English, Welsh, Scottish, Northern Irish or British</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="ethnicity" value="white-irish" class="option-card__input">
+                                        <div class="option-card__content">
+                                            <span class="option-card__text">White Irish</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="ethnicity" value="white-other" class="option-card__input">
+                                        <div class="option-card__content">
+                                            <span class="option-card__text">White Other</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="ethnicity" value="other" class="option-card__input">
+                                        <div class="option-card__content">
+                                            <span class="option-card__text">Other ethnic group</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Health Conditions -->
+                        <div class="form-group">
+                            <div class="question-card question-card--gray">
+                                <div class="question-card__header">
+                                    <h3 class="question-card__title">Do you have any physical or mental health conditions or illnesses lasting or expected to last 12 months or more which limit your ability to carry out day-to-day activities?</h3>
+                                </div>
+                                <div class="question-card__options">
+                                    <label class="option-card">
+                                        <input type="radio" name="healthConditions" value="limited-little" class="option-card__input">
+                                        <div class="option-card__content">
+                                            <span class="option-card__text">Yes, limited a little</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="healthConditions" value="limited-lot" class="option-card__input">
+                                        <div class="option-card__content">
+                                            <span class="option-card__text">Yes, limited a lot</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="healthConditions" value="no" class="option-card__input">
+                                        <div class="option-card__content">
+                                            <span class="option-card__text">No</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- NHS Satisfaction -->
+                        <div class="form-group">
+                            <div class="question-card question-card--satisfaction">
+                                <div class="question-card__header">
+                                    <h3 class="question-card__title">All in all, how satisfied or dissatisfied would you say you are with the way in which the National Health Service runs nowadays?</h3>
+                                </div>
+                                <div class="question-card__options">
+                                    <label class="option-card">
+                                        <input type="radio" name="nhsSatisfaction" value="very-dissatisfied" class="option-card__input">
+                                        <div class="option-card__content">
+                                            <span class="option-card__text">Very dissatisfied</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="nhsSatisfaction" value="quite-dissatisfied" class="option-card__input">
+                                        <div class="option-card__content">
+                                            <span class="option-card__text">Quite dissatisfied</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="nhsSatisfaction" value="neither" class="option-card__input">
+                                        <div class="option-card__content">
+                                            <span class="option-card__text">Neither satisfied nor dissatisfied</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="nhsSatisfaction" value="quite-satisfied" class="option-card__input">
+                                        <div class="option-card__content">
+                                            <span class="option-card__text">Quite satisfied</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="nhsSatisfaction" value="very-satisfied" class="option-card__input">
+                                        <div class="option-card__content">
+                                            <span class="option-card__text">Very satisfied</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Education Level -->
+                        <div class="form-group">
+                            <div class="question-card">
+                                <div class="question-card__header">
+                                    <h3 class="question-card__title">What is your highest educational qualification?</h3>
+                                </div>
+                                <div class="question-card__options">
+                                    <label class="option-card">
+                                        <input type="radio" name="education" value="no-qualifications" class="option-card__input">
+                                        <div class="option-card__content">
+                                            <span class="option-card__text">No qualifications, or none yet</span>
+                                            <span class="option-card__subtext">You have none of the qualifications (or none yet) listed below.</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="education" value="level-1" class="option-card__input">
+                                        <div class="option-card__content">
+                                            <span class="option-card__text">Level 1</span>
+                                            <span class="option-card__subtext">Up to 4 GCSEs grade A* to C, any GCSEs at other grades, 1 AS level, NVQ level 1.</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="education" value="level-2" class="option-card__input">
+                                        <div class="option-card__content">
+                                            <span class="option-card__text">Level 2</span>
+                                            <span class="option-card__subtext">5 or more GCSEs (A* to C), O levels (passes) or CSEs (1 A level, 2 to 3 AS levels, Welsh Baccalaureate Intermediate Diploma, NVQ level 2, BTEC First or General Diploma.</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="education" value="level-3" class="option-card__input">
+                                        <div class="option-card__content">
+                                            <span class="option-card__text">Level 3</span>
+                                            <span class="option-card__subtext">2 or more A levels, 4 or more AS levels, Higher School Certificate, Welsh Baccalaureate Advanced Diploma, NVQ level 3, BTEC National.</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="education" value="level-4-above" class="option-card__input">
+                                        <div class="option-card__content">
+                                            <span class="option-card__text">Level 4 or above</span>
+                                            <span class="option-card__subtext">Degree (BA, BSc), higher degree (MA, PhD, PGCE), NVQ level 4 to 5, BTEC Higher level professional qualifications (for example, teaching, nursing, accountancy).</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="education" value="apprenticeship" class="option-card__input">
+                                        <div class="option-card__content">
+                                            <span class="option-card__text">Apprenticeship, or other qualifications</span>
+                                            <span class="option-card__subtext">Apprenticeship, vocational or work-related qualifications, other qualifications.</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
 
                 <!-- Section 4: Data Consent -->
-                <section class="form-section" id="section-4">
+                <section class="form-section form-section--fullscreen" id="section-4" data-section="4">
                     <div class="form-section__content">
-                        <h2 class="form-section__title" data-i18n="form.step4.title">Data Consent</h2>
-                        <p class="form-section__description" data-i18n="form.step4.description">
-                            Please review and accept our data usage terms.
-                        </p>
+                        <div class="section-header">
+                            <div class="step-indicator">
+                                <span class="step-number">4</span>
+                                <span class="step-divider">/</span>
+                                <span class="step-total">5</span>
+                            </div>
+                            
+                            <h2 class="section-title" data-i18n="form.step4.title">
+                                Data Consent
+                            </h2>
+                        </div>
                         
                         <div class="form-group">
-                            <label class="checkbox-label">
-                                <input 
-                                    type="checkbox" 
-                                    name="dataConsent" 
-                                    class="checkbox-input" 
-                                    required
-                                >
-                                <span class="checkbox-custom"></span>
-                                <span class="checkbox-text" data-i18n="form.step4.consentCheckbox">
-                                    I consent to the collection and processing of my personal data
-                                </span>
-                            </label>
+                            <div class="eligibility-options">
+                                <!-- Data Consent Option -->
+                                <label class="eligibility-card eligibility-card--consent">
+                                    <input type="checkbox" name="dataConsent" value="yes" class="eligibility-card__input">
+                                    <div class="eligibility-card__content">
+                                        <div class="eligibility-card__header">
+                                            <span class="eligibility-card__checkbox"></span>
+                                            <div class="eligibility-card__text-content">
+                                                <span class="eligibility-card__title">I consent to the use of my data as described<br>on this page, and in more detail in our <a href="#" class="privacy-link">privacy policy</a>.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </label>
+                                
+                                <!-- Future Events Option -->
+                                <label class="eligibility-card eligibility-card--future-events">
+                                    <input type="checkbox" name="futureEvents" value="yes" class="eligibility-card__input">
+                                    <div class="eligibility-card__content">
+                                        <div class="eligibility-card__header">
+                                            <span class="eligibility-card__checkbox"></span>
+                                            <div class="eligibility-card__text-content">
+                                                <span class="eligibility-card__title">Please also inform me of similar events in the future<br>(do not delete my details after this event).</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label class="checkbox-label">
-                                <input 
-                                    type="checkbox" 
-                                    name="marketingConsent" 
-                                    class="checkbox-input"
-                                >
-                                <span class="checkbox-custom"></span>
-                                <span class="checkbox-text" data-i18n="form.step4.marketingCheckbox">
-                                    I would like to receive updates about NHS research (optional)
-                                </span>
-                            </label>
+                        <!-- Data Sharing Information -->
+                        <div class="section-description">
+                            <p>We will share all your contact, attitudinal and demographic details with Thinks, the organisation running this event, and they will make a separate data agreement with you if you are selected to take part.</p>
+    
+                            
+                            <p>Your data will be kept strictly confidential. We will delete your details within one year of the completion of the event, unless you tell us otherwise below. Please read our <a href="#" class="privacy-link">Privacy Policy</a> for more details.</p>
+                            
+                            <p>At any time, you can withdraw your consent and ask us to delete your data, or request a copy of it, by emailing <a href="mailto:privacy@sortitionfoundation.org" class="contact-link">privacy@sortitionfoundation.org</a>.</p>
+                            
+                            <p>If you ask us to delete your data, we will tell the other organisation(s) listed above to do the same.</p>
                         </div>
                     </div>
                 </section>
 
-                <!-- Section 5: Final Information -->
-                <section class="form-section" id="section-5">
-                    <div class="form-section__content">
-                        <h2 class="form-section__title" data-i18n="form.step5.title">Final Information</h2>
-                        <p class="form-section__description" data-i18n="form.step5.description">
-                            Any additional information you'd like to share?
-                        </p>
-                        
-                        <div class="form-group">
-                            <label for="additionalInfo" class="form-label" data-i18n="form.step5.additionalInfo">
-                                Additional Comments (Optional)
-                            </label>
-                            <textarea 
-                                id="additionalInfo" 
-                                name="additionalInfo" 
-                                class="form-field form-field--empty" 
-                                rows="4"
-                                data-i18n-placeholder="form.step5.additionalInfoPlaceholder"
-                                placeholder="Share any additional thoughts..."
-                            ></textarea>
-                        </div>
-                    </div>
-                </section>
 
-                <!-- Submit Button -->
-                <div class="form-submit">
-                    <button type="submit" class="btn btn--primary btn--large" id="submitBtn">
-                        <span data-i18n="navigation.submit">Submit Registration</span>
-                    </button>
-                </div>
             </form>
         </div>
     </main>
@@ -349,7 +611,7 @@
                 <span data-i18n="banner.register">Click to Register. All selected participants will receive £175.</span>
             </div>
             <div class="registration-banner__progress">
-                <span id="fieldProgress" data-i18n="banner.progress">4/12 fields completed</span>
+                <span id="fieldProgress"><span id="fieldNumbers">4/12</span> <span data-i18n="banner.fieldsCompleted">fields completed</span></span>
             </div>
         </div>
     </div>

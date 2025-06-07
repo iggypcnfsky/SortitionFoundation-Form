@@ -9,17 +9,14 @@
 /* Form Sections (Long Scroll) */
 .form-section {
   grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: inherit;
-  margin-bottom: 4rem;
-  padding: 2rem 0;
-  border-bottom: 1px solid #E0E0E0;
+  display: block;
+  margin-bottom: 0;
+  padding: 4rem 0;
+  border-bottom: none;
 }
 
 .form-section--fullscreen {
-  display: grid;
-  grid-template-columns: inherit;
-  align-items: center;
+  display: block;
   margin-bottom: 0;
   border-bottom: none;
   padding: 4rem 0;
@@ -36,15 +33,17 @@
   margin-bottom: 2rem;
 }
 
+/* Universal Content Container */
 .form-section__content {
-  grid-column: 1 / -1;
-  width: 100%;
-  max-width: none;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 @media (min-width: 768px) {
   .form-section__content {
-    grid-column: 2 / -2;
+    max-width: 1200px;
+    padding: 0 20px;
   }
 }
 
@@ -63,10 +62,6 @@
     justify-content: flex-start;
     gap: 2rem;
     margin-bottom: 2rem;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 20px;
   }
 }
 
@@ -127,6 +122,54 @@
   }
 }
 
+/* Section Description */
+.section-description {
+  margin-bottom: 3rem;
+}
+
+.section-description p {
+  color: var(--color-black-selection);
+  font-size: var(--font-size-h3-mobile);
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .section-description {
+    margin-bottom: 2rem;
+  }
+  
+  .section-description p {
+    font-size: var(--font-size-h3-desktop);
+  }
+}
+
+/* Form Note */
+.form-note {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  margin: 0;
+}
+
+.form-note-text {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.form-note p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-black-selection);
+}
+
+@media (min-width: 768px) {
+  .form-note p {
+    font-size: 16px;
+  }
+}
+
 .form-section__description {
   text-align: center;
   margin-bottom: 2rem;
@@ -154,7 +197,13 @@
 
 /* Form Groups */
 .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
 }
 
 .form-label {
@@ -167,28 +216,50 @@
 /* Form Fields */
 .form-field {
   width: 100%;
-  padding: 12px 16px;
-  border: 2px solid transparent;
-  border-radius: 8px;
+  padding: 20px 24px;
+  border: none;
+  border-radius: 0;
   font-family: var(--font-family);
-  font-size: 16px;
+  font-size: var(--font-size-h3-mobile);
+  font-weight: 400;
+  letter-spacing: var(--letter-spacing-h3);
   transition: all var(--transition-fast);
   background-color: var(--color-gray-default);
+  color: var(--color-black-selection);
+  min-height: 60px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .form-field {
+    font-size: var(--font-size-h3-desktop);
+    min-height: 70px;
+    padding: 24px 28px;
+  }
 }
 
 .form-field:focus {
   outline: none;
-  border-color: var(--color-blue-banner);
+  background-color: var(--color-gray-default);
+  box-shadow: inset 0 0 0 2px var(--color-blue-banner);
+}
+
+.form-field::placeholder {
+  color: var(--color-black-selection);
+  opacity: 1;
+  font-family: var(--font-family);
+  font-weight: 400;
 }
 
 /* Form Field States */
 .form-field--empty {
   background-color: var(--color-gray-default);
+  color: var(--color-black-selection);
 }
 
 .form-field--valid {
   background-color: var(--color-green-approval);
-  color: var(--color-white-option);
+  color: var(--color-black-selection);
 }
 
 .form-field--invalid {
@@ -196,15 +267,26 @@
   color: var(--color-white-option);
 }
 
-.form-field--valid::placeholder,
+.form-field--valid::placeholder {
+  color: var(--color-black-selection);
+  opacity: 0.8;
+}
+
 .form-field--invalid::placeholder {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* Textarea */
 textarea.form-field {
   resize: vertical;
-  min-height: 100px;
+  min-height: 120px;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  textarea.form-field {
+    min-height: 140px;
+  }
 }
 
 /* Form Fieldset */
@@ -235,19 +317,298 @@ textarea.form-field {
   }
 }
 
+/* Question Cards */
+.question-card {
+  background-color: var(--color-gray-default);
+  border-radius: 0;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .question-card {
+    flex-direction: row;
+  }
+}
+
+.question-card--gray {
+  background-color: var(--color-gray-default);
+}
+
+.question-card--selected {
+  background-color: var(--color-green-approval) !important;
+}
+
+.question-card__header {
+  padding: 1.5rem;
+  background-color: inherit;
+  flex: 1;
+}
+
+@media (min-width: 768px) {
+  .question-card__header {
+    flex: 0 0 40%;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
+.question-card__title {
+  font-size: var(--font-size-h2-mobile);
+  font-weight: 400;
+  color: var(--color-black-selection);
+  margin: 0;
+  line-height: 1.4;
+}
+
+@media (min-width: 768px) {
+  .question-card__title {
+    font-size: var(--font-size-h3-desktop);
+    font-weight: 400;
+  }
+}
+
+.question-card__options {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  flex: 1;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .question-card__options {
+    flex: 0 0 60%;
+    padding: 0;
+  }
+}
+
+/* Satisfaction Question - Horizontal Layout */
+.question-card--satisfaction .question-card__options {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.question-card--satisfaction .option-card {
+  flex: 1;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: none;
+}
+
+.question-card--satisfaction .option-card:last-child {
+  border-right: none;
+}
+
+@media (max-width: 767px) {
+  .question-card--satisfaction .question-card__options {
+    flex-direction: column;
+  }
+  
+  .question-card--satisfaction .option-card {
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .question-card--satisfaction .option-card:last-child {
+    border-bottom: none;
+  }
+}
+
+/* Option Cards */
+.option-card {
+  display: block;
+  cursor: pointer;
+  border: none;
+  border-radius: 0;
+  transition: all var(--transition-fast);
+  background-color: var(--color-white-option);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.option-card:last-child {
+  border-bottom: none;
+}
+
+.option-card__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.option-card__content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: all var(--transition-fast);
+}
+
+.option-card__text {
+  font-size: var(--font-size-h2-mobile);
+  font-weight: 400;
+  color: var(--color-black-selection);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.option-card__subtext {
+  font-size: var(--font-size-h3-mobile);
+  color: var(--color-black-selection);
+  opacity: 0.8;
+  line-height: 1.4;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .option-card__text {
+    font-size: var(--font-size-h3-desktop);
+  }
+  
+  .option-card__subtext {
+    font-size: 16px;
+  }
+}
+
+/* Option Card States */
+.option-card--selected {
+  background-color: var(--color-black-selection);
+}
+
+.option-card--selected .option-card__text,
+.option-card--selected .option-card__subtext {
+  color: var(--color-white-option);
+}
+
+.option-card:hover {
+  box-shadow: inset 0 0 0 2px var(--color-blue-banner);
+}
+
+.option-card:focus-within {
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--color-blue-banner);
+}
+
+/* Date Inputs */
+.question-card__date-inputs {
+  display: flex;
+  gap: 0;
+  background-color: var(--color-white-option);
+  width: 100%;
+}
+
+.date-input {
+  flex: 1 1 auto;
+  min-width: 60px;
+  max-width: none;
+  padding: 1.5rem 0.5rem;
+  border: none;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: transparent;
+  font-size: var(--font-size-h2-mobile);
+  font-weight: 400;
+  color: var(--color-black-selection);
+  text-align: center;
+  font-family: var(--font-family);
+  transition: all var(--transition-fast);
+  box-sizing: border-box;
+  width: auto;
+}
+
+.date-input:last-child {
+  border-right: none;
+}
+
+.date-input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.date-input:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--color-blue-banner);
+}
+
+@media (min-width: 768px) {
+  .date-input {
+    font-size: var(--font-size-h3-desktop);
+    padding: 2rem 0.75rem;
+    min-width: 80px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .date-input {
+    padding: 2rem 1rem;
+    min-width: 100px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .date-input {
+    padding: 2rem 1.25rem;
+    min-width: 120px;
+  }
+}
+
+/* Specific sizing for different date inputs */
+.date-input[name="birthDay"],
+.date-input[name="birthMonth"] {
+  flex: 0 1 auto;
+  min-width: 60px;
+}
+
+.date-input[name="birthYear"] {
+  flex: 1 1 auto;
+  min-width: 80px;
+}
+
+@media (min-width: 768px) {
+  .date-input[name="birthDay"],
+  .date-input[name="birthMonth"] {
+    min-width: 80px;
+  }
+  
+  .date-input[name="birthYear"] {
+    min-width: 100px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .date-input[name="birthDay"],
+  .date-input[name="birthMonth"] {
+    min-width: 100px;
+  }
+  
+  .date-input[name="birthYear"] {
+    min-width: 120px;
+  }
+}
+
 /* Option Buttons */
 .option-button {
   display: flex;
   align-items: center;
-  padding: 12px 20px;
-  border: 2px solid transparent;
-  border-radius: 8px;
+  padding: 20px 24px;
+  border: none;
+  border-radius: 0;
   cursor: pointer;
   transition: all var(--transition-fast);
   font-family: var(--font-family);
-  font-size: 16px;
-  min-height: 48px;
+  font-size: var(--font-size-h3-mobile);
+  font-weight: 400;
+  letter-spacing: var(--letter-spacing-h3);
+  min-height: 60px;
   position: relative;
+}
+
+@media (min-width: 768px) {
+  .option-button {
+    font-size: var(--font-size-h3-desktop);
+    min-height: 70px;
+    padding: 24px 28px;
+  }
 }
 
 .option-button__input {
@@ -266,28 +627,25 @@ textarea.form-field {
 .option-button--unselected {
   background-color: var(--color-white-option);
   color: var(--color-black-selection);
-  border-color: var(--color-gray-default);
 }
 
 .option-button--selected {
   background-color: var(--color-black-selection);
   color: var(--color-white-option);
-  border-color: var(--color-black-selection);
 }
 
 .option-button--valid {
   background-color: var(--color-green-approval);
-  color: var(--color-white-option);
-  border-color: var(--color-green-approval);
+  color: var(--color-black-selection);
 }
 
 .option-button:hover {
-  border-color: var(--color-blue-banner);
+  box-shadow: inset 0 0 0 2px var(--color-blue-banner);
 }
 
 .option-button:focus-within {
-  outline: 2px solid var(--color-blue-banner);
-  outline-offset: 2px;
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--color-blue-banner);
 }
 
 /* Eligibility Cards */
@@ -295,16 +653,11 @@ textarea.form-field {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  max-width: 800px;
-  margin: 0 auto;
 }
 
 @media (min-width: 768px) {
   .eligibility-options {
     gap: 1.5rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
   }
 }
 
@@ -674,21 +1027,24 @@ textarea.form-field {
 
 @media (max-width: 767px) {
   .registration-banner__content {
-    flex-direction: column;
-    gap: 8px;
-    text-align: center;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
   }
   
   .registration-banner__text {
-    text-align: center;
-    font-size: 24px;
+    text-align: left;
+    font-size: var(--font-size-h2-mobile);
     font-weight: 400;
+    flex: 1;
   }
   
   .registration-banner__progress {
-    text-align: center;
-    font-size: 24px;
+    text-align: right;
+    font-size: var(--font-size-h2-mobile);
     font-weight: 400;
+    flex-shrink: 0;
   }
 }
 

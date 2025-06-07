@@ -393,22 +393,30 @@ class I18nSystem {
       en: {
         'header.title': 'You have been randomly selected to help shape the future of NHS',
         'header.subtitle': 'This form will take less than 3 minutes. All selected participants will receive £175.',
-        'form.step1.title': 'Eligibility Confirmation',
+        'form.step1.title': 'Confirm eligibility and ability to attend',
         'form.step1.description': 'Please confirm that you are eligible to participate in this NHS survey.',
         'form.step1.question': 'Are you eligible to participate?',
         'form.step1.yes': 'Yes',
         'form.step1.no': 'No',
-        'form.step2.title': 'Contact Details',
-        'form.step2.description': 'Please provide your contact information.',
-        'form.step2.firstName': 'First Name',
-        'form.step2.lastName': 'Last Name',
-        'form.step2.email': 'Email Address',
-        'form.step2.phone': 'Phone Number',
+        'form.step2.title': 'Name, contact details and address',
+        'form.step2.description': 'We use the following contact details in order to communicate with you about this event.',
+        'form.step3.title': 'About You',
+        'form.step3.description': 'We use the following details in our democratic lottery process, to select a group of participants that broadly represents the entire community.',
+        'form.step4.title': 'Data Consent',
+        'form.step2.emailNote': 'Every person who registers online <strong>must have their own individual email address.</strong> If you do not have an email address, or you share one with someone else who is registering, please ring the Freephone number above to register.',
+        'form.step2.firstNamePlaceholder': 'First Name',
+        'form.step2.lastNamePlaceholder': 'Last Name',
+        'form.step2.emailPlaceholder': 'Email',
+        'form.step2.phonePlaceholder': 'Phone (mobile or home)',
+        'form.step2.addressLine1Placeholder': 'Address Line 1',
+        'form.step2.addressLine2Placeholder': 'Address Line 2',
+        'form.step2.cityPlaceholder': 'City',
+        'form.step2.postCodePlaceholder': 'Post Code',
         'navigation.previous': 'Previous',
         'navigation.next': 'Next',
         'navigation.submit': 'Submit',
         'banner.register': 'Click to Register. All selected participants will receive £175.',
-        'banner.progress': '{{completed}}/{{total}} fields completed'
+        'banner.fieldsCompleted': 'fields completed'
       },
       es: {
         'header.title': 'Ha sido seleccionado aleatoriamente para ayudar a dar forma al futuro del NHS',
@@ -420,6 +428,9 @@ class I18nSystem {
         'form.step1.no': 'No',
         'form.step2.title': 'Datos de Contacto',
         'form.step2.description': 'Por favor proporcione su información de contacto.',
+        'form.step3.title': 'Acerca de Usted',
+        'form.step3.description': 'Utilizamos los siguientes detalles en nuestro proceso de lotería democrática, para seleccionar un grupo de participantes que represente ampliamente a toda la comunidad.',
+        'form.step4.title': 'Consentimiento de Datos',
         'form.step2.firstName': 'Nombre',
         'form.step2.lastName': 'Apellido',
         'form.step2.email': 'Correo Electrónico',
@@ -427,8 +438,7 @@ class I18nSystem {
         'navigation.previous': 'Anterior',
         'navigation.next': 'Siguiente',
         'navigation.submit': 'Enviar',
-        'banner.incomplete': '{{completed}} de {{total}} campos completados',
-        'banner.continue': 'Continuar'
+        'banner.fieldsCompleted': 'campos completados'
       }
     };
     
@@ -451,7 +461,14 @@ class I18nSystem {
     // Translate elements with data-i18n attribute
     NHS.DOM.$$('[data-i18n]').forEach(element => {
       const key = element.getAttribute('data-i18n');
-      element.textContent = this.t(key);
+      const translation = this.t(key);
+      
+      // Check if translation contains HTML
+      if (translation.includes('<') && translation.includes('>')) {
+        element.innerHTML = translation;
+      } else {
+        element.textContent = translation;
+      }
     });
     
     // Translate placeholders
@@ -476,6 +493,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const checkFormHandler = () => {
     if (window.formHandler) {
       window.nhsApp.formHandler = window.formHandler;
+      // Ensure translations are applied after everything is loaded
+      if (window.nhsApp.i18n) {
+        window.nhsApp.i18n.translatePage();
+      }
     } else {
       setTimeout(checkFormHandler, 100);
     }
@@ -495,4 +516,9 @@ window.addEventListener('load', () => {
   
   // Remove loading states
   document.body.classList.remove('loading');
+  
+  // Ensure translations are applied (fallback)
+  if (window.nhsApp && window.nhsApp.i18n) {
+    window.nhsApp.i18n.translatePage();
+  }
 }); 

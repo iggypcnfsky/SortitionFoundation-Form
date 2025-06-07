@@ -30,6 +30,7 @@ class FormHandler {
     this.sectionNumber = NHS.DOM.$('.section-number');
     this.registrationBanner = NHS.DOM.$('#registrationBanner');
     this.bannerProgress = NHS.DOM.$('#fieldProgress');
+    this.fieldNumbers = NHS.DOM.$('#fieldNumbers');
   }
 
   setupValidationRules() {
@@ -69,35 +70,90 @@ class FormHandler {
         validator: NHS.Validation.isValidPhone,
         message: 'Please enter a valid phone number'
       },
-      dateOfBirth: {
+      addressLine1: {
         required: true,
-        validator: NHS.Validation.isValidDateOfBirth,
-        message: 'Please enter a valid date of birth (must be over 16)'
+        validator: NHS.Validation.isRequired,
+        message: 'Please enter your address'
       },
-      gender: {
+      addressLine2: {
+        required: false,
+        validator: () => true,
+        message: ''
+      },
+      city: {
         required: true,
-        validator: (value) => NHS.Validation.isRequired(value),
-        message: 'Please select your gender'
+        validator: NHS.Validation.isValidName,
+        message: 'Please enter a valid city name'
       },
-      postcode: {
+      postCode: {
         required: true,
         validator: NHS.Validation.isValidPostcode,
         message: 'Please enter a valid UK postcode'
       },
+      gender: {
+        required: true,
+        validator: (value) => ['male', 'female', 'non-binary'].includes(value),
+        message: 'Please select your gender'
+      },
+      birthDay: {
+        required: true,
+        validator: (value) => {
+          const day = parseInt(value, 10);
+          return day >= 1 && day <= 31;
+        },
+        message: 'Please enter a valid day (1-31)'
+      },
+      birthMonth: {
+        required: true,
+        validator: (value) => {
+          const month = parseInt(value, 10);
+          return month >= 1 && month <= 12;
+        },
+        message: 'Please enter a valid month (1-12)'
+      },
+      birthYear: {
+        required: true,
+        validator: (value) => {
+          const year = parseInt(value, 10);
+          const currentYear = new Date().getFullYear();
+          return year >= 1900 && year <= currentYear - 16;
+        },
+        message: 'Please enter a valid birth year (must be 16+ years old)'
+      },
+      ethnicity: {
+        required: true,
+        validator: (value) => ['asian-british', 'black-british', 'mixed-multiple', 'white-british', 'white-irish', 'white-other', 'other'].includes(value),
+        message: 'Please select your ethnic group'
+      },
+      healthConditions: {
+        required: true,
+        validator: (value) => ['limited-little', 'limited-lot', 'no'].includes(value),
+        message: 'Please select your health condition status'
+      },
+      nhsSatisfaction: {
+        required: true,
+        validator: (value) => ['very-dissatisfied', 'quite-dissatisfied', 'neither', 'quite-satisfied', 'very-satisfied'].includes(value),
+        message: 'Please select your NHS satisfaction level'
+      },
+      education: {
+        required: true,
+        validator: (value) => ['no-qualifications', 'level-1', 'level-2', 'level-3', 'level-4-above', 'apprenticeship'].includes(value),
+        message: 'Please select your education level'
+      },
       dataConsent: {
         required: true,
-        validator: (value) => value === 'on',
-        message: 'You must consent to data processing to continue'
+        validator: (value) => value === 'yes',
+        message: 'You must consent to data usage to participate'
       }
     };
 
     // Define required fields for each step
     this.requiredFields = [
       ['canAttendAllDates', 'isEligible'], // Step 1
-      ['firstName', 'lastName', 'email', 'phone'], // Step 2
-      ['dateOfBirth', 'gender', 'postcode'], // Step 3
+      ['firstName', 'lastName', 'email', 'phone', 'addressLine1', 'city', 'postCode'], // Step 2
+      ['gender', 'birthDay', 'birthMonth', 'birthYear', 'ethnicity', 'healthConditions', 'nhsSatisfaction', 'education'], // Step 3
       ['dataConsent'], // Step 4
-      [] // Step 5 - no required fields
+      [] // Step 5 (final step)
     ];
   }
 
@@ -127,6 +183,8 @@ class FormHandler {
     // Option button styling
     NHS.Events.on(this.form, 'change', 'input[type="radio"]', (e) => {
       this.updateOptionButtons(e.target);
+      this.updateOptionCards(e.target);
+      this.validateField(e.target);
     });
 
     // Eligibility card styling
@@ -175,26 +233,61 @@ class FormHandler {
 
   validateField(field) {
     const fieldName = field.name;
-    const fieldValue = field.type === 'checkbox' ? (field.checked ? 'on' : '') : field.value;
-    const rule = this.validationRules[fieldName];
-    
-    if (!rule) return true;
-
+    let fieldValue;
     let isValid = true;
     let errorMessage = '';
+    
+    const rule = this.validationRules[fieldName];
+    if (!rule) return true;
+    
+    // Handle radio buttons specially
+    if (field.type === 'radio') {
+      const checkedRadio = this.form.querySelector(`[name="${fieldName}"]:checked`);
+      if (checkedRadio) {
+        fieldValue = checkedRadio.value;
+        // Validate the selected value
+        if (rule.validator && !rule.validator(fieldValue)) {
+          isValid = false;
+          errorMessage = rule.message;
+        }
+      } else if (rule.required) {
+        isValid = false;
+        errorMessage = 'This field is required';
+      }
+      
+      // Update all radio buttons in the group
+      const allRadios = this.form.querySelectorAll(`[name="${fieldName}"]`);
+      allRadios.forEach(radio => {
+        this.updateFieldState(radio, isValid, errorMessage);
+      });
+      
+    } else {
+      // Handle other field types
+      if (field.type === 'checkbox') {
+        fieldValue = field.checked ? 'on' : '';
+      } else {
+        fieldValue = field.value;
+      }
 
-    // Check if required
-    if (rule.required && !NHS.Validation.isRequired(fieldValue)) {
-      isValid = false;
-      errorMessage = 'This field is required';
-    }
-    // Check custom validator
-    else if (fieldValue && rule.validator && !rule.validator(fieldValue)) {
-      isValid = false;
-      errorMessage = rule.message;
-    }
+      // Check if required
+      if (rule.required && !NHS.Validation.isRequired(fieldValue)) {
+        isValid = false;
+        errorMessage = 'This field is required';
+      }
+      // Check custom validator
+      else if (fieldValue && rule.validator && !rule.validator(fieldValue)) {
+        isValid = false;
+        errorMessage = rule.message;
+      }
 
-    this.updateFieldState(field, isValid, errorMessage);
+      this.updateFieldState(field, isValid, errorMessage);
+    }
+    
+    // Special handling for date inputs - validate the entire date group
+    if (['birthDay', 'birthMonth', 'birthYear'].includes(fieldName)) {
+      this.validateDateGroup();
+    }
+    
     this.updateRegistrationBanner();
     
     return isValid;
@@ -230,6 +323,32 @@ class FormHandler {
     }
   }
 
+  validateDateGroup() {
+    const dayField = this.form.querySelector('[name="birthDay"]');
+    const monthField = this.form.querySelector('[name="birthMonth"]');
+    const yearField = this.form.querySelector('[name="birthYear"]');
+    const dateContainer = dayField?.closest('.question-card');
+    
+    if (!dayField || !monthField || !yearField || !dateContainer) return;
+    
+    // Check if all date fields have values and are valid
+    const dayValue = dayField.value;
+    const monthValue = monthField.value;
+    const yearValue = yearField.value;
+    
+    const dayValid = dayValue && this.validationRules.birthDay.validator(dayValue);
+    const monthValid = monthValue && this.validationRules.birthMonth.validator(monthValue);
+    const yearValid = yearValue && this.validationRules.birthYear.validator(yearValue);
+    
+    const allValid = dayValid && monthValid && yearValid;
+    
+    // Update the entire date container background
+    NHS.DOM.removeClass(dateContainer, 'question-card--selected');
+    if (allValid) {
+      NHS.DOM.addClass(dateContainer, 'question-card--selected');
+    }
+  }
+
   updateOptionButtons(radioInput) {
     const fieldset = radioInput.closest('.form-fieldset');
     if (!fieldset) return;
@@ -254,6 +373,42 @@ class FormHandler {
         NHS.DOM.removeClass(selectedOption, 'option-button--selected');
         NHS.DOM.addClass(selectedOption, 'option-button--valid');
       }
+    }
+  }
+
+  updateOptionCards(radioInput) {
+    const questionCard = radioInput.closest('.question-card');
+    if (!questionCard) return;
+    
+    const allOptions = questionCard.querySelectorAll('.option-card');
+    const selectedOption = radioInput.closest('.option-card');
+    
+    // Reset all options
+    allOptions.forEach(option => {
+      NHS.DOM.removeClass(option, 'option-card--selected');
+    });
+    
+    // Update selected option if radio is checked
+    if (selectedOption && radioInput.checked) {
+      NHS.DOM.addClass(selectedOption, 'option-card--selected');
+    }
+    
+    this.updateQuestionCardState(radioInput);
+  }
+
+  updateQuestionCardState(radioInput) {
+    const questionCard = radioInput.closest('.question-card');
+    if (!questionCard) return;
+    
+    // Check if any radio button in this question is selected
+    const allRadios = questionCard.querySelectorAll('input[type="radio"]');
+    const hasSelection = Array.from(allRadios).some(radio => radio.checked);
+    
+    // Update question card background based on selection state
+    if (hasSelection) {
+      NHS.DOM.addClass(questionCard, 'question-card--selected');
+    } else {
+      NHS.DOM.removeClass(questionCard, 'question-card--selected');
     }
   }
 
@@ -367,7 +522,7 @@ class FormHandler {
   }
 
   updateRegistrationBanner() {
-    if (!this.registrationBanner || !this.bannerProgress) return;
+    if (!this.registrationBanner || !this.fieldNumbers) return;
     
     const { completed, total } = this.getCompletionStatus();
     const isComplete = completed === total;
@@ -381,8 +536,8 @@ class FormHandler {
       NHS.DOM.addClass(this.registrationBanner, 'registration-banner--inactive');
     }
     
-    // Update progress text
-    this.bannerProgress.textContent = `${completed}/${total} fields completed`;
+    // Update only the numbers part (not the translated text)
+    this.fieldNumbers.textContent = `${completed}/${total}`;
   }
 
   getCompletionStatus() {
@@ -390,15 +545,39 @@ class FormHandler {
     let completed = 0;
     
     allRequiredFields.forEach(fieldName => {
-      const field = this.form.querySelector(`[name="${fieldName}"]`);
-      if (field) {
-        const fieldValue = field.type === 'checkbox' ? (field.checked ? 'on' : '') : field.value;
-        const rule = this.validationRules[fieldName];
-        
-        if (rule && NHS.Validation.isRequired(fieldValue) && 
-            (!rule.validator || rule.validator(fieldValue))) {
-          completed++;
+      const fields = this.form.querySelectorAll(`[name="${fieldName}"]`);
+      
+      if (fields.length === 0) return;
+      
+      const firstField = fields[0];
+      let fieldValue;
+      let isValid = false;
+      
+      // Handle radio buttons (multiple elements with same name)
+      if (firstField.type === 'radio') {
+        const checkedRadio = this.form.querySelector(`[name="${fieldName}"]:checked`);
+        if (checkedRadio) {
+          fieldValue = checkedRadio.value;
+          const rule = this.validationRules[fieldName];
+          isValid = rule && (!rule.validator || rule.validator(fieldValue));
         }
+      } 
+      // Handle other field types
+      else {
+        const field = firstField;
+        if (field.type === 'checkbox') {
+          fieldValue = field.checked ? field.value : '';
+        } else {
+          fieldValue = field.value;
+        }
+        
+        const rule = this.validationRules[fieldName];
+        isValid = rule && NHS.Validation.isRequired(fieldValue) && 
+                  (!rule.validator || rule.validator(fieldValue));
+      }
+      
+      if (isValid) {
+        completed++;
       }
     });
     
