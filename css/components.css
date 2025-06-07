@@ -124,12 +124,12 @@
 
 /* Section Description */
 .section-description {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .section-description p {
   color: var(--color-black-selection);
-  font-size: var(--font-size-h3-mobile);
+  font-size: var(--font-size-h2-mobile);
   line-height: 1.5;
   margin: 0;
 }
@@ -159,14 +159,14 @@
 
 .form-note p {
   margin: 0;
-  font-size: 14px;
+  font-size: var(--font-size-h2-mobile);
   line-height: 1.5;
   color: var(--color-black-selection);
 }
 
 @media (min-width: 768px) {
   .form-note p {
-    font-size: 16px;
+    font-size: var(--font-size-h3-desktop);
   }
 }
 
@@ -1172,6 +1172,11 @@ textarea.form-field {
   margin-bottom: 3rem;
 }
 
+/* Override video-section padding for Section 5 on mobile */
+.info-content-row__video.video-section {
+  padding: 0 !important;
+}
+
 @media (min-width: 768px) {
   .info-content-row {
     display: grid !important;
@@ -1194,7 +1199,7 @@ textarea.form-field {
   .info-content-row__video.video-section {
     grid-column: 2 !important;
     margin-bottom: 0;
-    padding: 0;
+    padding: 0 !important;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -1225,7 +1230,7 @@ textarea.form-field {
 
 .event-info__text {
   color: var(--color-black-selection);
-  font-size: var(--font-size-h3-mobile);
+  font-size: var(--font-size-h2-mobile);
   line-height: 1.5;
   margin: 0;
 }
