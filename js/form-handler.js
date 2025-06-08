@@ -2,6 +2,7 @@
 
 class FormHandler {
   constructor() {
+    console.log('DEBUG: FormHandler constructor called');
     this.currentStep = 1;
     this.totalSteps = 5;
     this.formData = {};
@@ -21,16 +22,20 @@ class FormHandler {
 
   setupElements() {
     this.form = NHS.DOM.$('#nhsForm');
-    this.steps = NHS.DOM.$$('.form-step');
-    this.nextBtn = NHS.DOM.$('#nextBtn');
-    this.prevBtn = NHS.DOM.$('#prevBtn');
-    this.submitBtn = NHS.DOM.$('#submitBtn');
-    this.progressBar = NHS.DOM.$('.progress__fill');
-    this.progressText = NHS.DOM.$('.progress__current');
-    this.sectionNumber = NHS.DOM.$('.section-number');
+    this.steps = NHS.DOM.$$('.form-step') || [];
+    this.nextBtn = NHS.DOM.$('#nextBtn') || null;
+    this.prevBtn = NHS.DOM.$('#prevBtn') || null;
+    this.submitBtn = NHS.DOM.$('#submitBtn') || null;
+    this.progressBar = NHS.DOM.$('.progress__fill') || null;
+    this.progressText = NHS.DOM.$('.progress__current') || null;
+    this.sectionNumber = NHS.DOM.$('.section-number') || null;
     this.registrationBanner = NHS.DOM.$('#registrationBanner');
     this.bannerProgress = NHS.DOM.$('#fieldProgress');
     this.fieldNumbers = NHS.DOM.$('#fieldNumbers');
+    
+    console.log('DEBUG: Form found:', !!this.form);
+    console.log('DEBUG: Banner found:', !!this.registrationBanner);
+    console.log('DEBUG: Field numbers found:', !!this.fieldNumbers);
   }
 
   setupValidationRules() {
@@ -283,8 +288,13 @@ class FormHandler {
     let isValid = true;
     let errorMessage = '';
     
+    console.log('DEBUG: validateField called for:', fieldName);
+    
     const rule = this.validationRules[fieldName];
-    if (!rule) return true;
+    if (!rule) {
+      console.log('DEBUG: No validation rule for field:', fieldName);
+      return true;
+    }
     
     // Handle radio buttons specially
     if (field.type === 'radio') {
@@ -520,19 +530,21 @@ class FormHandler {
   }
 
   updateUI() {
-    // Update step visibility
-    this.steps.forEach((step, index) => {
-      const stepNumber = index + 1;
-      if (stepNumber === this.currentStep) {
-        NHS.DOM.removeClass(step, 'form-step--hidden');
-        NHS.DOM.addClass(step, 'form-step--active');
-        step.style.display = 'block';
-      } else {
-        NHS.DOM.removeClass(step, 'form-step--active');
-        NHS.DOM.addClass(step, 'form-step--hidden');
-        step.style.display = 'none';
-      }
-    });
+    // Update step visibility (only if steps exist)
+    if (this.steps && this.steps.length > 0) {
+      this.steps.forEach((step, index) => {
+        const stepNumber = index + 1;
+        if (stepNumber === this.currentStep) {
+          NHS.DOM.removeClass(step, 'form-step--hidden');
+          NHS.DOM.addClass(step, 'form-step--active');
+          step.style.display = 'block';
+        } else {
+          NHS.DOM.removeClass(step, 'form-step--active');
+          NHS.DOM.addClass(step, 'form-step--hidden');
+          step.style.display = 'none';
+        }
+      });
+    }
 
     // Update progress bar
     const progressPercentage = (this.currentStep / this.totalSteps) * 100;
@@ -562,7 +574,7 @@ class FormHandler {
       this.submitBtn.style.display = this.currentStep === this.totalSteps ? 'inline-flex' : 'none';
     }
 
-    // Focus management
+    // Focus management (skip if no step elements)
     const currentStepElement = NHS.DOM.$(`#step-${this.currentStep}`);
     if (currentStepElement) {
       const firstInput = currentStepElement.querySelector('input, textarea, select');
@@ -580,13 +592,21 @@ class FormHandler {
     const { completed, total } = this.getCompletionStatus();
     const isComplete = completed === total;
     
+    console.log('DEBUG: Banner update', { completed, total, isComplete });
+    console.log('DEBUG: Banner classes before:', this.registrationBanner.className);
+    
     // Update banner state
     if (isComplete) {
       NHS.DOM.removeClass(this.registrationBanner, 'registration-banner--inactive');
       NHS.DOM.addClass(this.registrationBanner, 'registration-banner--active');
+      NHS.DOM.addClass(this.registrationBanner, 'registration-banner--complete');
+      console.log('DEBUG: Should be GREEN - classes after:', this.registrationBanner.className);
+      console.log('DEBUG: Computed background color:', window.getComputedStyle(this.registrationBanner).backgroundColor);
     } else {
       NHS.DOM.removeClass(this.registrationBanner, 'registration-banner--active');
+      NHS.DOM.removeClass(this.registrationBanner, 'registration-banner--complete');
       NHS.DOM.addClass(this.registrationBanner, 'registration-banner--inactive');
+      console.log('DEBUG: Should be BLUE - classes after:', this.registrationBanner.className);
     }
     
     // Update only the numbers part (not the translated text)

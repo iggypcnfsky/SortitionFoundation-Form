@@ -990,7 +990,7 @@ textarea.form-field {
   background-color: var(--color-blue-banner);
   padding: 16px 20px;
   z-index: 1000;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
   transform: translateY(100%);
   opacity: 0;
 }
@@ -1010,8 +1010,21 @@ textarea.form-field {
   cursor: pointer;
 }
 
-.registration-banner:hover.registration-banner--active {
+.registration-banner.registration-banner--complete {
+  background-color: var(--color-green-approval, #66D575) !important;
+}
+
+/* Additional specificity for debugging */
+div.registration-banner.registration-banner--complete {
+  background-color: #66D575 !important;
+}
+
+.registration-banner:hover.registration-banner--active:not(.registration-banner--complete) {
   background-color: #2A9FE6;
+}
+
+.registration-banner.registration-banner--complete:hover {
+  background-color: #5BC269 !important; /* Slightly darker green for hover */
 }
 
 .registration-banner__content {
