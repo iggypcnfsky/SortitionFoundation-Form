@@ -2,6 +2,10 @@
 
 A multilingual registration form for NHS participant selection and registration, built for the Sortition Foundation.
 
+![NHS Form Demo Screenshot](assets/images/demo-screenshot.jpg)
+
+> **🌐 Live Demo**: [https://nhsform.netlify.app](https://nhsform.netlify.app)
+
 > **Technical Assessment**: This project was developed as part of a technical evaluation, including analysis of existing implementation and recommendations for UX optimization and conversion improvement.
 
 ## 🌍 Languages Supported
