@@ -160,7 +160,7 @@ Based on the existing form implementation, several key areas have been identifie
 
 ### Recommended Implementation Roadmap
 
-#### Phase 1: Immediate UX Improvements (1-2 weeks)
+#### Phase 1: Immediate UX Improvements
 **High Impact, Low Technical Complexity**
 - Increase checkbox/button sizes to 44px minimum (accessibility compliance)
 - Implement persistent £175 reward banner with NHS legitimacy markers
@@ -173,7 +173,7 @@ Based on the existing form implementation, several key areas have been identifie
 - JavaScript enhancements to form validation system
 - Banner component with scroll-triggered visibility
 
-#### Phase 2: Architecture Enhancement (3-4 weeks)
+#### Phase 2: Architecture Enhancement
 **Medium Effort, High Conversion Impact**
 - Hero video section with play overlay and accessibility controls
 - Information architecture restructure (engagement before consent)
@@ -187,7 +187,7 @@ Based on the existing form implementation, several key areas have been identifie
 - Enhanced state management for progressive disclosure
 - Browser language detection API integration
 
-#### Phase 3: Advanced Analytics & Optimization (4-6 weeks)
+#### Phase 3: Advanced Analytics & Optimization
 **High Technical Investment, Long-term Value**
 - Comprehensive analytics integration (Google Analytics 4, Hotjar)
 - A/B testing framework for conversion optimization
@@ -235,6 +235,6 @@ MIT License - see LICENSE file for details.
 
 ---
 
-Built with ❤️ by the Sortition Foundation for NHS participant engagement.
+Built with ❤️ for the Sortition Foundation and for NHS participant engagement.
 
 *This project demonstrates both technical implementation capabilities and UX optimization expertise, prepared as part of a technical assessment for the Sortition Foundation.* 
