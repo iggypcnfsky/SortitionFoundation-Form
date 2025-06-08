@@ -549,30 +549,30 @@ textarea.form-field {
   box-shadow: inset 0 0 0 2px var(--color-blue-banner);
 }
 
-/* Date Inputs */
+/* Date Inputs - Using CSS Grid for equal distribution */
 .question-card__date-inputs {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 0;
-  background-color: var(--color-white-option);
-  width: 100%;
 }
 
 .date-input {
-  flex: 1 1 auto;
-  min-width: 60px;
-  max-width: none;
-  padding: 1.5rem 0.5rem;
+  display: block;
+  cursor: pointer;
   border: none;
+  border-radius: 0;
+  transition: all var(--transition-fast);
+  background-color: var(--color-white-option);
   border-right: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: transparent;
-  font-size: 16px; /* Minimum 16px to prevent mobile zoom */
+  padding: 1.5rem;
+  font-size: var(--font-size-h2-mobile);
   font-weight: 400;
   color: var(--color-black-selection);
+  line-height: 1.4;
   text-align: center;
   font-family: var(--font-family);
-  transition: all var(--transition-fast);
   box-sizing: border-box;
-  width: auto;
+  width: 100%;
 }
 
 .date-input:last-child {
@@ -588,59 +588,13 @@ textarea.form-field {
   box-shadow: inset 0 0 0 2px var(--color-blue-banner);
 }
 
+.date-input:hover {
+  box-shadow: inset 0 0 0 2px var(--color-blue-banner);
+}
+
 @media (min-width: 768px) {
   .date-input {
     font-size: var(--font-size-h3-desktop);
-    padding: 2rem 0.75rem;
-    min-width: 80px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .date-input {
-    padding: 2rem 1rem;
-    min-width: 100px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .date-input {
-    padding: 2rem 1.25rem;
-    min-width: 120px;
-  }
-}
-
-/* Specific sizing for different date inputs */
-.date-input[name="birthDay"],
-.date-input[name="birthMonth"] {
-  flex: 0 1 auto;
-  min-width: 60px;
-}
-
-.date-input[name="birthYear"] {
-  flex: 1 1 auto;
-  min-width: 80px;
-}
-
-@media (min-width: 768px) {
-  .date-input[name="birthDay"],
-  .date-input[name="birthMonth"] {
-    min-width: 80px;
-  }
-  
-  .date-input[name="birthYear"] {
-    min-width: 100px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .date-input[name="birthDay"],
-  .date-input[name="birthMonth"] {
-    min-width: 100px;
-  }
-  
-  .date-input[name="birthYear"] {
-    min-width: 120px;
   }
 }
 
